@@ -1,0 +1,27 @@
+.login { 
+	height:110px;
+	width:190px;
+	margin:auto;
+	border:1px #CCC solid;
+	padding:10px;
+}
+
+.login input { 
+	padding:5px;
+	margin:5px
+}
+
+.create { 
+	height:160px;
+	width:190px;
+	margin:auto;
+	margin-top: 100px;
+	border:1px #CCC solid;
+	padding:10px;
+}
+
+.create input { 
+	padding:5px;
+	margin:5px
+}
+ 
