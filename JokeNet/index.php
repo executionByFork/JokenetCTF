@@ -14,7 +14,7 @@
 <body>
 
 <?php
-	include "/JokeNet/navbar.php";
+	include "navbar.php";
 ?>
 <h3>test</h3>
 
