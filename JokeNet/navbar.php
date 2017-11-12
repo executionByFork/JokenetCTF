@@ -11,5 +11,6 @@ echo '
 			<li><a href="#about">About</a></li>
 		</ul>
 	</nav>
-	';
+';
+
 ?>
