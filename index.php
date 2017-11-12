@@ -8,8 +8,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="style/style.css" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="style/main.css" />
+	<noscript><link rel="stylesheet" href="style/noscript.css" /></noscript>
 	<title>Login</title>
 </head>
 <body class="is-loading">
