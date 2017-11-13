@@ -5,12 +5,12 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
-body {
+/*body {
   background: #2c3338;
   color: #606468;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
   margin: 0;
-}
+}*/
 
 input {
   border: none;
@@ -102,7 +102,7 @@ after { clear: both; }
 
 .jokeNetLogin input { 
 	padding:5px;
-	margin:5px
+	margin:5px;
 }
 
 .jokeNetCreate { 
@@ -116,5 +116,5 @@ after { clear: both; }
 
 .jokeNetCreate input { 
 	padding:5px;
-	margin:5px
+	margin:5px;
 }
