@@ -88,3 +88,30 @@ after { clear: both; }
 #login form input[type="submit"]:hover {
   background: #16aa56;
 }
+
+.jokeNetLogin { 
+  height:110px;
+  width:190px;
+  margin:auto;
+  border:1px #CCC solid;
+  padding:10px;
+}
+
+.jokeNetLogin input { 
+  padding:5px;
+  margin:5px;
+}
+
+.jokeNetCreate { 
+  height:160px;
+  width:190px;
+  margin:auto;
+  margin-top: 100px;
+  border:1px #CCC solid;
+  padding:10px;
+}
+
+.jokeNetCreate input { 
+  padding:5px;
+  margin:5px;
+}
