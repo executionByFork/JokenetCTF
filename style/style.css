@@ -27,7 +27,8 @@ p {
 
 after { clear: both; }
 
-#login {
+#login,
+#submit-flags {
   margin: 50px auto;
   width: 320px;
 }
