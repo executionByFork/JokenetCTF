@@ -23,7 +23,7 @@
         <input type="text" id="user" placeholder="Username" />
      
       <span class="fontawesome-lock"></span>
-        <input type="password" id"pass" placeholder="Password" />
+        <input type="password" id="pass" placeholder="Password" />
       
       <input type="submit" value="Login" />
 			<a href="#createAccount" class="forgot">Create Account</a>
