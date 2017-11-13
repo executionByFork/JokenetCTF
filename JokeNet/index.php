@@ -1,8 +1,3 @@
-<?php
-	setcookie("logged", 0);
-	setcookie("username", "");
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +9,9 @@
 <body>
 
 <?php
+	include "/mysql.php";
 	include "navbar.php";
 ?>
-<h3>test</h3>
 
 </body>
 </html>
