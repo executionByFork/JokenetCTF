@@ -7,7 +7,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style/style.css" />
-	<link rel="stylesheet" type="text/css" href="/style/styleLogin.css" />
 	<title>Login</title>
 </head>
 <body>
@@ -17,16 +16,7 @@
 	<br />
 
 	<!-- Official Login -->
-
-	<center><h2 class="form-signin-heading">Sign in Here</h2></center>
-	<div class="wrapper">
-		<form class="form-signin">
-			<input type="text" class="form-control" name="username" placeholder="Username" required="" />
-			<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-		</form>
-	</div>
-
+	<h2>Sign In</h2>	
 	<div id="login">
     <form name='form-login'>
       <span class="fontawesome-user"></span>
@@ -36,18 +26,20 @@
         <input type="password" id"pass" placeholder="Password" />
       
       <input type="submit" value="Login" />
+			<a href="#createAccount" class="forgot">Create Account</a>
     </form>
   </div>
 
-	<center><h3>Login</h3></center>
-	<form action="authenticate.php" method="POST" class="jokeNetLogin">
-		<input type="text" placeholder="Username" name="username">
-		<input type="password" placeholder="Password" name="password">
-		<input type="submit" value="Sign In">
-		<a href="createUser.php?r=login" class="forgot">Create Account</a>
-	</form>
-
 	<!-- Flag Submission -->
+	<div id="submit-flags">
+		<h2>Sign In</h2>
+    <form name='flag-form'>
+      <span class="fontawesome-user"></span>
+        <input type="text" id="flag" placeholder="Flag Code" />
+      <input type="submit" value="Login" />
+			<a href="#hints" class="forgot">Need Hints?</a>
+    </form>
+  </div>
 
 	<!-- Flag Hints -->
 
