@@ -1,8 +1,13 @@
 <?php
 	session_start();
 
-	if ($_SESSION['logged'])
+	if($_SESSION['logged'])
 		header("Location: /Main/main.php");
+
+	if( isset($_SESSION['ERROR']) ) {
+		print $_SESSION['ERROR'];
+		$_SESSION['Error'] = "";
+	}
 ?>
 
 <!DOCTYPE html>
@@ -37,11 +42,9 @@
 </html>
 
 <?php
-	debug_to_console("hello");
 	if ( !isset($_POST['login']) ) {
 		die();
 	}
-	debug_to_console("hello");
 
 	$username = (array_key_exists('username', $_POST) && is_string($_POST['username']))
 									? $_POST['username'] : '';
@@ -49,10 +52,8 @@
 									? $_POST['password'] : '';
 
 	if (empty($username) || empty($password)) {
-			print "<script type=\"text/javascript\">
-							 alert(\"You didn't fill out the form!\");
-						 </script>";
-			die();
+			$_SESSION['Error'] = "You didn't fill out the form!";
+			header("Location: /Main/authenticate.php");
 	}
 
 	include "/mysql.php";
@@ -62,10 +63,8 @@
 	$x = $stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users`
 											 WHERE `username` = ?");
 	if( !$x ) {
-		print "<script type=\"text/javascript\">
-						 alert(\"Error preparing statment\");
-					 </script>";
-		die();
+			$_SESSION['Error'] = "Error preparing SQL statement";
+			header("Location: /Main/authenticate.php");
 	}
 	$stmt->bind_param("s", $form_username);
 
@@ -79,22 +78,11 @@
 	$stmt->fetch();
 
 	if (!$stmt->num_rows) {
-		print "<script type=\"text/javascript\">
-						 alert(\"Incorrect Username or Password!\");
-					 </script>";
-		die();
-	} else {
-		$options = [ 'cost' => 12 ];
-		$ph = password_hash($raw_password, PASSWORD_BCRYPT, $options);
-
-	debug_to_console($username);
-	debug_to_console($ph);
-		if ( !($passHash === $ph) ) {
-			print "<script type=\"text/javascript\">
-							 alert(\"Incorrect Username or Password!\");
-						 </script>";
-			die();
-		}
+		$_SESSION['Error'] = "Incorrect Username or Password!";
+		header("Location: /Main/authenticate.php");
+	} elseif ( !password_verify($raw_password, $passHash) ) {
+		$_SESSION['Error'] = "Incorrect Username or Password!";
+		header("Location: /Main/authenticate.php");
 	}
 
 	//Set user state to logged in
@@ -103,13 +91,4 @@
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	//header("Location: /Main/main.php");
 	exit();
-
-
-	function debug_to_console( $data ) {
-		$output = $data;
-		if ( is_array( $output ) )
-			$output = implode( ',', $output);
-
-		echo '<script>console.log("' . $output . '");</script>';
-	}
 ?>

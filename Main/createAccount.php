@@ -2,10 +2,13 @@
 	session_start();
 
 	if ($_SESSION['logged']) {
-		print "<script type=\"text/javascript\">
-						 alert(\"You must be logged out to create and account!\");
-						 window.location.replace(\"/Main/main.php\");
-					 </script>";
+		$_SESSION['Error'] = "You must be logged out to create and account!";
+		header("Location: /Main/main.php");
+	}
+
+	if( isset($_SESSION['ERROR']) ) {
+		print $_SESSION['ERROR'];
+		$_SESSION['Error'] = "";
 	}
 ?>
 
@@ -54,16 +57,12 @@
 											? stripslashes($_POST['passCheck']) : '';
 
 	if ( empty($username) || empty($password) || empty($passCheck) ) {
-		print "<script type=\"text/javascript\">
-						 alert(\"You must completely fill out the form!\");
-					 </script>";
-		die();
+		$_SESSION['Error'] = "You must completely fill out the form!";
+		header("Location: /Main/createAccount.php");
 	}
 	if ( !($password === $passCheck) ) {
-		print "<script type=\"text/javascript\">
-						 alert(\"Error: Password feilds must match\");
-					 </script>";
-		die();
+		$_SESSION['Error'] = "Password feilds must match!";
+		header("Location: /Main/createAccount.php");
 	}
 
 	include "../mysql.php";
@@ -71,26 +70,21 @@
 	$stmt = $conn->stmt_init();
 	$x = $stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start)
 											 VALUES (?, ?, now())");
-		if( !$x ) {
-				print "<script type=\"text/javascript\">
-								 alert(\"Error preparing statment\");
-							 </script>";
-				die();
-		}
+	if( !$x ) {
+		$_SESSION['Error'] = "Error preparing SQL statement";
+		header("Location: /Main/createAccount.php");
+	}
 
-		$options = [ 'cost' => 12 ];
-		$ph = password_hash($password, PASSWORD_BCRYPT, $options);
+	$options = [ 'cost' => 12 ];
+	$ph = password_hash($password, PASSWORD_BCRYPT, $options);
 
-		$stmt->bind_param("ss", $username, $ph);
-		$stmt->execute();
+	$stmt->bind_param("ss", $username, $ph);
+	$stmt->execute();
 
-		session_regenerate_id();
-		$_SESSION['logged'] = 1;
-		$_SESSION['username'] = $username;
+	session_regenerate_id();
+	$_SESSION['logged'] = 1;
+	$_SESSION['username'] = $username;
 
-		print "<script type=\"text/javascript\">
-						 alert(\"User Created!\");
-						 window.location.replace(\"/Main/main.php\");
-					 </script>";
+	header("Location: /Main/main.php");
 
 ?>
