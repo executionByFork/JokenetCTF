@@ -20,10 +20,10 @@
 		<h2>Sign In</h2>
 		<form action="" method="POST">
 			<span></span>
-				<input type="text" id="user" placeholder="Username" />
+				<input type="text" name="username" placeholder="Username" />
 		 
 			<span></span>
-				<input type="password" id="password" placeholder="Password" />
+				<input type="password" name="password" placeholder="Password" />
 			
 			<input name="login" type="submit" value="Login" />
 			<a href="createAccount.php">Create Account</a>
