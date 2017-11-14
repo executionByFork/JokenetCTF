@@ -25,8 +25,7 @@
 			<span></span>
 				<input type="password" id="pass" placeholder="Password" />
 			
-			<input name="login" type="submit" value="Login" />
-			<a href="createAccount.php">Create Account</a>
+			<input name="login" type="submit" value="Sign Up" />
 		</form>
 	</div>
 
