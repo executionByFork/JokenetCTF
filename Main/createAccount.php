@@ -84,10 +84,6 @@
 		$stmt->bind_param("ss", $username, $ph);
 		$stmt->execute();
 
-		debug_to_console($username);
-		debug_to_console($ph);
-
-
 		session_regenerate_id();
 		$_SESSION['logged'] = 1;
 		$_SESSION['username'] = $username;

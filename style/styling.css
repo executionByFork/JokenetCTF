@@ -96,6 +96,10 @@ after { clear: both; }
   color: white;
 }
 
+#logout {
+  text-align: right;
+}
+
 .jokeNetLogin { 
   height:110px;
   width:190px;

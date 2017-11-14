@@ -60,7 +60,7 @@
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
-	if( !$stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users` WHERE `username` = ?") ) {
+	if( !($stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users` WHERE `username` = ?")) ) {
 		print "<script type=\"text/javascript\">
 						 alert(\"Error preparing statment\");
 					 </script>";
@@ -85,6 +85,9 @@
 	} else {
 		$options = [ 'cost' => 12 ];
 		$ph = password_hash($raw_password, PASSWORD_BCRYPT, $options);
+
+	debug_to_console($username);
+	debug_to_console($ph);
 		if ( !($passHash === $ph) ) {
 			print "<script type=\"text/javascript\">
 							 alert(\"Incorrect Username or Password!\");
