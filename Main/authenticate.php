@@ -3,6 +3,7 @@
 
 	if($_SESSION['logged'])
 		header("Location: /Main/main.php");
+		die();
 
 	debug_to_console("ERROR MSG: " . $_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
@@ -63,6 +64,7 @@
 	if (empty($username) || empty($password)) {
 		$_SESSION['ERROR'] = "You didn't fill out the form!";
 		header("Location: /Main/authenticate.php");
+		die();
 	}
 
 	include "/mysql.php";
@@ -72,8 +74,9 @@
 	$x = $stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users`
 											 WHERE `username` = ?");
 	if( !$x ) {
-			$_SESSION['ERROR'] = "Error preparing SQL statement";
-			header("Location: /Main/authenticate.php");
+		$_SESSION['ERROR'] = "Error preparing SQL statement";
+		header("Location: /Main/authenticate.php");
+		die();
 	}
 	$stmt->bind_param("s", $form_username);
 
@@ -86,12 +89,14 @@
 	$stmt->bind_result($u, $passHash);
 	$stmt->fetch();
 
-	if (!$stmt->num_rows) {
+	if ( !($stmt->num_rows) ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
-	} elseif ( !password_verify($raw_password, $passHash) ) {
+		die();
+	} elseif ( !(password_verify($raw_password, $passHash)) ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
+		die();
 	}
 
 	//Set user state to logged in
@@ -99,5 +104,4 @@
 	$_SESSION['logged'] = 1;
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	header("Location: /Main/main.php");
-	exit();
 ?>

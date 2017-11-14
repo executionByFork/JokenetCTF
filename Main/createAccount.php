@@ -4,6 +4,7 @@
 	if ($_SESSION['logged']) {
 		$_SESSION['ERROR'] = "You must be logged out to create and account!";
 		header("Location: /Main/main.php");
+		die();
 	}
 
 	if( isset($_SESSION['ERROR']) ) {
@@ -59,10 +60,12 @@
 	if ( empty($username) || empty($password) || empty($passCheck) ) {
 		$_SESSION['ERROR'] = "You must completely fill out the form!";
 		header("Location: /Main/createAccount.php");
+		die();
 	}
 	if ( !($password === $passCheck) ) {
 		$_SESSION['ERROR'] = "Password feilds must match!";
 		header("Location: /Main/createAccount.php");
+		die();
 	}
 
 	include "../mysql.php";
@@ -73,6 +76,7 @@
 	if( !$x ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
+		die();
 	}
 
 	$options = [ 'cost' => 12 ];
