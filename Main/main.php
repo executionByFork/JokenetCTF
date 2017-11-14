@@ -15,12 +15,15 @@
 </head>
 <body>
 	
-	<center>
+	<div>
+		<h3 id="logout"><a href="/Main/logout.php">Logout</a></h3>
+	</div>
+	<br />
+	<center><h1><b>
 		<?php
 			print "Welcome, " . $_SESSION['username'] . "!"
 		?>
-	</center>
-	<br />
+	</b></h1></center>
 	<br />
 	<br />
 

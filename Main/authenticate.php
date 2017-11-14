@@ -1,5 +1,11 @@
 <?php
 	session_start();
+
+	if ($_SESSION['logged']) {
+		print "<script type=\"text/javascript\">
+						 window.location.replace(\"/Main/main.php\");
+					 </script>";
+	}
 ?>
 
 <!DOCTYPE html>
