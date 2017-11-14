@@ -1,9 +1,10 @@
 <?php
 	session_start();
 
-	if($_SESSION['logged'])
+	if($_SESSION['logged']) {
 		header("Location: /Main/main.php");
 		die();
+	}
 
 	debug_to_console("ERROR MSG: " . $_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
