@@ -66,10 +66,12 @@
 		die();
 	}
 
-	include "/mysql.php";
+	include "../mysql.php";
 
 	$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start) VALUES (?, ?, datetime('now'))") ) {
+	$x = $stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start)
+											 VALUES (?, ?, now())")
+		if( !$x ) {
 				print "<script type=\"text/javascript\">
 								 alert(\"Error preparing statment\");
 							 </script>";
@@ -82,6 +84,9 @@
 		$stmt->bind_param("ss", $username, $ph);
 		$stmt->execute();
 
+		debug_to_console($username);
+		debug_to_console($ph);
+
 
 		session_regenerate_id();
 		$_SESSION['logged'] = 1;
@@ -91,4 +96,16 @@
 						 alert(\"User Created!\");
 						 window.location.replace(\"/Main/main.php\");
 					 </script>";
+
+
+
+	function debug_to_console( $data ) {
+		$output = $data;
+		if ( is_array( $output ) )
+			$output = implode( ',', $output);
+
+		echo '<script>console.log("' . $output . '");</script>';
+	}
+
+
 ?>
