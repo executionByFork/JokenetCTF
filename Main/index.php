@@ -16,34 +16,38 @@
 	<br />
 
 	<!-- Official Login -->
-	<center><h2>Sign In</h2></center>
 	<div id="main">
-    <form name='form-login'>
-      <span class="fontawesome-user"></span>
-        <input type="text" id="user" placeholder="Username" />
-     
-      <span class="fontawesome-lock"></span>
-        <input type="password" id="pass" placeholder="Password" />
-      
-      <input type="submit" value="Login" />
+		<h2>Sign In</h2>
+		<form name='form-login'>
+			<span class="fontawesome-user"></span>
+				<input type="text" id="user" placeholder="Username" />
+		 
+			<span class="fontawesome-lock"></span>
+				<input type="password" id="pass" placeholder="Password" />
+			
+			<input type="submit" value="Login" />
 			<a href="#createAccount" class="forgot">Create Account</a>
-    </form>
-  </div>
+		</form>
+	</div>
 
 	<!-- Flag Submission -->
 	<div id="main">
 		<h2>Flag Submission</h2>
-    <form name='flag-form'>
-      <span class="fontawesome-user"></span>
-        <input type="text" id="flag" placeholder="Flag Code" />
-      <input type="submit" value="Login" />
+		<form name='flag-form'>
+			<span class="fontawesome-user"></span>
+				<input type="text" id="flag" placeholder="Flag Code" />
+			<input type="submit" value="Submit" />
 			<a href="#hints" class="forgot">Need Hints?</a>
-    </form>
-  </div>
-  
-  
+		</form>
+	</div>
 
 	<!-- Flag Hints -->
+	<div id="main">
+		<h2>View Leaderboards</h2>
+		<form name='flag-form'>
+			<input type="submit" value="Leaderboards" />
+		</form>
+	</div>
 
 </body>
 </html>
