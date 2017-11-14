@@ -41,12 +41,12 @@
 		</form>
 	</div>
 
-	<!-- Flag Hints -->
+	<!-- Leaderboards -->
 	<div id="main">
 		<h2>View Leaderboards</h2>
-		<form name='flag-form'>
-			<input type="submit" value="Leaderboards" />
-		</form>
+		<a href="#leaderboards" class="forgot">
+			<input class="Leaderboards" type="submit" value="Leaderboards" />
+		</a>
 	</div>
 
 </body>
