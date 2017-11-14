@@ -4,9 +4,18 @@
 	if($_SESSION['logged'])
 		header("Location: /Main/main.php");
 
+	debug_to_console($_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
-		print $_SESSION['ERROR'];
+		print "<b>" . $_SESSION['ERROR'] . "</b>";
 		$_SESSION['Error'] = "";
+	}
+
+	function debug_to_console( $data ) {
+		$output = $data;
+		if ( is_array( $output ) )
+			$output = implode( ',', $output);
+
+		echo '<script>console.log("' . $output . '");</script>';
 	}
 ?>
 
