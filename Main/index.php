@@ -18,7 +18,7 @@
 	<!-- Official Login -->
 	<div id="main">
 		<h2>Sign In</h2>
-		<form action="">
+		<form action="authenticate.php">
 			<span></span>
 				<input type="text" id="user" placeholder="Username" />
 		 
@@ -26,25 +26,25 @@
 				<input type="password" id="pass" placeholder="Password" />
 			
 			<input name="login" type="submit" value="Login" />
-			<a href="#createAccount">Create Account</a>
+			<a href="createAccount.php">Create Account</a>
 		</form>
 	</div>
 
 	<!-- Flag Submission -->
 	<div id="main">
 		<h2>Flag Submission</h2>
-		<form action="">
+		<form action="submitFlag.php">
 			<span></span>
 				<input type="text" id="flag" placeholder="Flag Code" />
 			<input name="flag" type="submit" value="Submit" />
-			<a href="#hints">Need Hints?</a>
+			<a href="hints.php">Need Hints?</a>
 		</form>
 	</div>
 
 	<!-- Leaderboards -->
 	<div id="main">
 		<h2>View Leaderboards</h2>
-		<form action="">
+		<form action="leaderboards.php">
 			<span></span>
 				<input type="text" id="flag" placeholder="Search by User" />
 			<input name="search" type="submit" value="Search" />
