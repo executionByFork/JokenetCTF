@@ -44,9 +44,7 @@
 	<!-- Leaderboards -->
 	<div id="main">
 		<h2>View Leaderboards</h2>
-		<a href="#leaderboards" class="forgot">
-			<input class="Leaderboards" type="submit" value="Leaderboards" />
-		</a>
+		<input class="leaderboards" type="submit" value="Leaderboards" />
 	</div>
 
 </body>
