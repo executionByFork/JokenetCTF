@@ -83,7 +83,7 @@ after { clear: both; }
   color: white;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 #main form input[type="submit"]:hover {
   background: #16aa56;

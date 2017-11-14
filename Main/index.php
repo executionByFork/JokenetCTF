@@ -25,8 +25,8 @@
 			<span></span>
 				<input type="password" id="pass" placeholder="Password" />
 			
-			<input type="submit" value="Login" />
-			<a href="#createAccount" class="forgot">Create Account</a>
+			<input name="login" type="submit" value="Login" />
+			<a href="#createAccount">Create Account</a>
 		</form>
 	</div>
 
@@ -36,8 +36,8 @@
 		<form action="">
 			<span></span>
 				<input type="text" id="flag" placeholder="Flag Code" />
-			<input type="submit" value="Submit" />
-			<a href="#hints" class="forgot">Need Hints?</a>
+			<input name="flag" type="submit" value="Submit" />
+			<a href="#hints">Need Hints?</a>
 		</form>
 	</div>
 
@@ -46,7 +46,7 @@
 		<h2>View Leaderboards</h2>
 		<form action="">
 			<span></span>
-				<input type="text" id="flag" placeholder="Flag Code" />
+				<input type="text" id="flag" placeholder="Keyword" />
 			<input name="search" type="submit" value="Search" />
 			<input name="top" type="submit" value="View Top 10" />
 		</form>
