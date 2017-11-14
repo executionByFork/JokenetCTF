@@ -66,7 +66,7 @@
 		die();
 	}
 
-	include "mysql.php";
+	include "/mysql.php";
 
 	$stmt = $conn->stmt_init();
 		if( !$stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start) VALUES (?, ?, datetime('now'))") ) {
