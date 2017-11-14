@@ -30,6 +30,14 @@
 		</form>
 	</div>
 
+	<!-- Link to JokeNet -->
+	<div id="main">
+		<h2>Start Hunting</h2>
+		<form action="gotoJokeNet.php">
+			<input name="jokenetBtn" type="submit" value="Submit" />
+		</form>
+	</div>
+
 	<!-- Flag Submission -->
 	<div id="main">
 		<h2>Flag Submission</h2>
