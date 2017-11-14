@@ -60,7 +60,9 @@
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
-	if( !($stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users` WHERE `username` = ?")) ) {
+	$x = $stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users`
+											 WHERE `username` = ?")
+	if( !$x ) {
 		print "<script type=\"text/javascript\">
 						 alert(\"Error preparing statment\");
 					 </script>";
