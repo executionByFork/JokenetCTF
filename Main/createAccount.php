@@ -33,8 +33,7 @@
 			<span></span>
 				<input type="password" name="passCheck" placeholder="Retype Password" />
 			
-			<input name="signup" type="submit" value="Login" />
-			<a href="createAccount.php">Create Account</a>
+			<input name="signup" type="submit" value="Sign Up" />
 		</form>
 	</div>
 
