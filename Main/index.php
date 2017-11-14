@@ -30,7 +30,7 @@
     </form>
   </div>
 
-	<!-- Flag Submission 
+	<!-- Flag Submission -->
 	<div id="main">
 		<h2>Flag Submission</h2>
     <form name='flag-form'>
@@ -40,7 +40,7 @@
 			<a href="#hints" class="forgot">Need Hints?</a>
     </form>
   </div>
-  -->
+  
   
 
 	<!-- Flag Hints -->
