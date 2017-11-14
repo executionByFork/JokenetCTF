@@ -43,6 +43,7 @@
 	if ( !isset($_POST['login']) ) {
 		die();
 	}
+	debug_to_console("hello");
 
 	$username = (array_key_exists('username', $_POST) && is_string($_POST['username']))
 									? $_POST['username'] : '';
