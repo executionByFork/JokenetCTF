@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="/style/style.css" />
-	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/style/styling.css" />
+	<title>JokeNet Login</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
 		<input type="text" placeholder="Username" name="username">
 		<input type="password" placeholder="Password" name="password">
 		<input type="submit" value="Sign In">
-		<a href="createUser.php?r=login" class="forgot">Create Account</a>
+		<a href="#createJoker" class="forgot">Create Account</a>
 	</form>
 
 </body>

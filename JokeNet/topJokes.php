@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style/style.css" />
 	<link rel="stylesheet" href="/style/navbar.css" />
-	<title>Login</title>
+	<title>Top Jokes - JokeNet</title>
 </head>
 <body>
 
