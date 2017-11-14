@@ -46,7 +46,7 @@
 		<h2>View Leaderboards</h2>
 		<form action="">
 			<span></span>
-				<input type="text" id="flag" placeholder="Keyword" />
+				<input type="text" id="flag" placeholder="Search by User" />
 			<input name="search" type="submit" value="Search" />
 			<input name="top" type="submit" value="View Top 10" />
 		</form>
