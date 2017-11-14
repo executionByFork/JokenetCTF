@@ -70,7 +70,7 @@
 
 	$stmt = $conn->stmt_init();
 	$x = $stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start)
-											 VALUES (?, ?, now())")
+											 VALUES (?, ?, now())");
 		if( !$x ) {
 				print "<script type=\"text/javascript\">
 								 alert(\"Error preparing statment\");
