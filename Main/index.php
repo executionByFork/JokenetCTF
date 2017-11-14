@@ -18,11 +18,11 @@
 	<!-- Official Login -->
 	<div id="main">
 		<h2>Sign In</h2>
-		<form name='form-login'>
-			<span class="fontawesome-user"></span>
+		<form action="">
+			<span></span>
 				<input type="text" id="user" placeholder="Username" />
 		 
-			<span class="fontawesome-lock"></span>
+			<span></span>
 				<input type="password" id="pass" placeholder="Password" />
 			
 			<input type="submit" value="Login" />
@@ -33,8 +33,8 @@
 	<!-- Flag Submission -->
 	<div id="main">
 		<h2>Flag Submission</h2>
-		<form name='flag-form'>
-			<span class="fontawesome-user"></span>
+		<form action="">
+			<span></span>
 				<input type="text" id="flag" placeholder="Flag Code" />
 			<input type="submit" value="Submit" />
 			<a href="#hints" class="forgot">Need Hints?</a>
@@ -44,7 +44,12 @@
 	<!-- Leaderboards -->
 	<div id="main">
 		<h2>View Leaderboards</h2>
-		<input class="leaderboards" type="submit" value="Leaderboards" />
+		<form action="">
+			<span></span>
+				<input type="text" id="flag" placeholder="Flag Code" />
+			<input name="search" type="submit" value="Search" />
+			<input name="top" type="submit" value="View Top 10" />
+		</form>
 	</div>
 
 </body>
