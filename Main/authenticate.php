@@ -80,10 +80,11 @@
 		$options = [ 'cost' => 12 ];
 		$ph = password_hash($raw_password, PASSWORD_BCRYPT, $options);
 		if ( !($passHash === $ph) ) {
-				print "<script type=\"text/javascript\">
-								 alert(\"Incorrect Username or Password!\");
-							 </script>";
-		die();
+			print "<script type=\"text/javascript\">
+							 alert(\"Incorrect Username or Password!\");
+						 </script>";
+			die();
+		}
 	}
 
 	//Set user state to logged in
