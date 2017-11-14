@@ -4,7 +4,7 @@
 	if($_SESSION['logged'])
 		header("Location: /Main/main.php");
 
-	debug_to_console($_SESSION['ERROR']);
+	debug_to_console("ERROR MSG: " . $_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
 		print "<b>" . $_SESSION['ERROR'] . "</b>";
 		$_SESSION['Error'] = "";
