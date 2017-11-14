@@ -1,11 +1,8 @@
 <?php
 	session_start();
 
-	if ($_SESSION['logged']) {
-		print "<script type=\"text/javascript\">
-						 window.location.replace(\"/Main/main.php\");
-					 </script>";
-	}
+	if ($_SESSION['logged'])
+		header("Location: /Main/main.php");
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +37,7 @@
 </html>
 
 <?php
+	debug_to_console("hello");
 	if ( !isset($_POST['login']) ) {
 		die();
 	}
@@ -105,4 +103,13 @@
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	//header("Location: /Main/main.php");
 	exit();
+
+
+	function debug_to_console( $data ) {
+		$output = $data;
+		if ( is_array( $output ) )
+			$output = implode( ',', $output);
+
+		echo '<script>console.log("' . $output . '");</script>';
+	}
 ?>
