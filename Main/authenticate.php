@@ -6,8 +6,8 @@
 
 	debug_to_console("ERROR MSG: " . $_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
-		print "<b>" . $_SESSION['ERROR'] . "</b>";
-		$_SESSION['Error'] = "";
+		echo "<b>" . $_SESSION['ERROR'] . "</b>";
+    unset($_SESSION['ERROR']);
 	}
 
 	function debug_to_console( $data ) {
@@ -61,7 +61,7 @@
 									? $_POST['password'] : '';
 
 	if (empty($username) || empty($password)) {
-			$_SESSION['Error'] = "You didn't fill out the form!";
+			$_SESSION['ERROR'] = "You didn't fill out the form!";
 			header("Location: /Main/authenticate.php");
 	}
 
@@ -72,7 +72,7 @@
 	$x = $stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users`
 											 WHERE `username` = ?");
 	if( !$x ) {
-			$_SESSION['Error'] = "Error preparing SQL statement";
+			$_SESSION['ERROR'] = "Error preparing SQL statement";
 			header("Location: /Main/authenticate.php");
 	}
 	$stmt->bind_param("s", $form_username);
@@ -87,10 +87,10 @@
 	$stmt->fetch();
 
 	if (!$stmt->num_rows) {
-		$_SESSION['Error'] = "Incorrect Username or Password!";
+		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 	} elseif ( !password_verify($raw_password, $passHash) ) {
-		$_SESSION['Error'] = "Incorrect Username or Password!";
+		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 	}
 

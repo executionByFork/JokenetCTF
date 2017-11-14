@@ -2,13 +2,13 @@
 	session_start();
 
 	if ($_SESSION['logged']) {
-		$_SESSION['Error'] = "You must be logged out to create and account!";
+		$_SESSION['ERROR'] = "You must be logged out to create and account!";
 		header("Location: /Main/main.php");
 	}
 
 	if( isset($_SESSION['ERROR']) ) {
-		print $_SESSION['ERROR'];
-		$_SESSION['Error'] = "";
+		echo "<b>" . $_SESSION['ERROR'] . "</b>";
+    unset($_SESSION['ERROR']);
 	}
 ?>
 
@@ -57,11 +57,11 @@
 											? stripslashes($_POST['passCheck']) : '';
 
 	if ( empty($username) || empty($password) || empty($passCheck) ) {
-		$_SESSION['Error'] = "You must completely fill out the form!";
+		$_SESSION['ERROR'] = "You must completely fill out the form!";
 		header("Location: /Main/createAccount.php");
 	}
 	if ( !($password === $passCheck) ) {
-		$_SESSION['Error'] = "Password feilds must match!";
+		$_SESSION['ERROR'] = "Password feilds must match!";
 		header("Location: /Main/createAccount.php");
 	}
 
@@ -71,7 +71,7 @@
 	$x = $stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start)
 											 VALUES (?, ?, now())");
 	if( !$x ) {
-		$_SESSION['Error'] = "Error preparing SQL statement";
+		$_SESSION['ERROR'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
 	}
 
