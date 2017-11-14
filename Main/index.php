@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="/style/styling.css" />
 	<title>Login</title>
 </head>
 <body>
@@ -30,9 +30,9 @@
     </form>
   </div>
 
-	<!-- Flag Submission -->
+	<!-- Flag Submission 
 	<div id="main">
-		<h2>Sign In</h2>
+		<h2>Flag Submission</h2>
     <form name='flag-form'>
       <span class="fontawesome-user"></span>
         <input type="text" id="flag" placeholder="Flag Code" />
@@ -40,6 +40,7 @@
 			<a href="#hints" class="forgot">Need Hints?</a>
     </form>
   </div>
+  -->
   
 
 	<!-- Flag Hints -->
