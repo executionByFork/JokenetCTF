@@ -96,6 +96,12 @@ after { clear: both; }
   color: white;
 }
 
+#logoutWrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+
 #logout {
   text-align: center;
   background: #b5cd60;

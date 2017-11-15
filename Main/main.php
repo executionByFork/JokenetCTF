@@ -21,9 +21,9 @@
 	<title>CTF Main Page</title>
 </head>
 <body>
-	
-	<a href="/Main/logout.php"><button id="logout"><b>Logout</b></button></a>
-	
+	<div id="logoutWrapper">
+		<a href="/Main/logout.php"><button id="logout"><b>Logout</b></button></a>
+	<div>
 	<br />
 	<center>
 		<?php
