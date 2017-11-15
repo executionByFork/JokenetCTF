@@ -32,7 +32,7 @@
 	<br />
 
 	<?php
-		include "mysql.php";
+		include "../mysql.php";
 
 		//prepare and bind
 		$stmt = $conn->stmt_init();
