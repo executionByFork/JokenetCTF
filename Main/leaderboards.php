@@ -51,7 +51,7 @@
 																		ELSE SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP()))
 																	END
 																) AS `time`
-												 FROM `users`") ) {
+												 FROM `users` ORDER BY `points` DESC, `time` ASC") ) {
 				$_SESSION['ERROR'] = "Error preparing SQL statement";
 				header("Location: /Main/leaderboards.php");
 				die();
