@@ -2,8 +2,8 @@
 	session_start();
 
 	$_SESSION['logged'] = 0;
-	$_SESSION['username'] = "";
-	$_SESSION['ERROR'] = "";
+  unset($_SESSION['username']);
+  unset($_SESSION['ERROR']);
 
 	header("Location: /Main/authenticate.php");
 	exit();
