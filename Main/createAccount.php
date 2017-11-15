@@ -39,6 +39,7 @@
 			
 			<input name="signup" type="submit" value="Sign Up" />
 		</form>
+		<a href="createAccount.php"><- Back to Login</a>
 	</div>
 
 </body>
