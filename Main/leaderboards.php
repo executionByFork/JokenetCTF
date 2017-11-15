@@ -37,7 +37,12 @@
 
 		//prepare and bind
 		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT * FROM `users`") ) {
+		if( !$stmt->prepare("SELECT `username`,
+																`flag1`, `flag2`, `flag3`, `flag4`,
+																`flag5`, `flag6`, `flag7`, `flag8`, `flag9`,
+																`hint1`, `hint2`, `hint3`, `hint4`,
+																`hint5`, `hint6`, `hint7`, `hint8`, `hint9`,
+												 FROM `users`") ) {
 				$_SESSION['ERROR'] = "Error preparing SQL statement";
 				header("Location: /Main/leaderboards.php");
 				die();
