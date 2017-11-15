@@ -51,7 +51,10 @@
                                     WHEN `start` AND `end`
                                       THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
                                     WHEN `start`
-                                      THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP()))
+                                      THEN CONCAT(
+                                      	SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP())),
+                                      	' - In progress'
+                                      )
                                     ELSE 'Not Started'
                                   END
                                  ) AS `time` FROM `users`
