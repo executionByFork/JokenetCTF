@@ -25,6 +25,7 @@
 		<a href="/Main/logout.php"><button id="logout"><b>Logout</b></button></a>
 	</div>
 	<br />
+	<br />
 	<center>
 		<?php
 			print "<h1><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>";
