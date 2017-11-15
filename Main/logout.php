@@ -1,7 +1,7 @@
 <?php
-	unset($_SESSION['logged']);
-	unset($_SESSION['username']);
-	unset($_SESSION['ERROR']);
+	$_SESSION['logged'] = 0;
+	$_SESSION['username'] = "";
+	$_SESSION['ERROR'] = "";
 
 	header("Location: /Main/authenticate.php");
 ?>
