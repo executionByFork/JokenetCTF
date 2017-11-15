@@ -81,7 +81,7 @@
 						VALUES
 						 	(?, ?,
 							 0, 0, 0, 0, 0, 0, 0, 0, 0,
-							 0, 0, 0, 0, 0, 0, 0, 0, 0)"
+							 0, 0, 0, 0, 0, 0, 0, 0, 0)";
 
 	if( !$stmt->prepare($query) ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
