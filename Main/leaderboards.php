@@ -84,7 +84,7 @@
                           END
                          ) AS `time` FROM `users`
                 ) x
-                WHERE `username` LIKE '%?%'
+                WHERE `username` LIKE ?
                 ORDER BY LOCATE(?, `username`), `username` LIMIT 50";
 
         $searchKey = (array_key_exists('searchKey', $_POST) && is_string($_POST['searchKey']))
@@ -109,7 +109,7 @@
 		//if user is searching usernames
 		//query needs to be bound to params
 		if($_POST['search']) {
-			$stmt->bind_param("ss", $searchKey, $searchKey);
+			$stmt->bind_param("ss", "%" . $searchKey . "%", $searchKey);
 		}
 
 		if (!$stmt->execute()){
