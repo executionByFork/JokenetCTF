@@ -92,9 +92,8 @@
 
 	$stmt->bind_result($passHash);
 	$stmt->fetch();
-	debug_to_console($stmt->num_rows);
 
-	if ( $stmt->num_rows == 0 ) {
+	if ( !$stmt->num_rows ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
