@@ -28,9 +28,9 @@
 	<br />
 	<center>
 		<?php
-			print "<h1><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>"
+			print "<h1><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>";
 			if(substr($_SESSION['username'], 0, 7) === "<script") {
-				print "<br><i>nice try :)</i>"
+				print "<br><i>nice try :)</i>";
 			}
 		?>
 	</center>
