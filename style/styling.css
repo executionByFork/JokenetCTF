@@ -127,6 +127,9 @@ after { clear: both; }
   padding: 22px 22px 22px 22px;
   width: 100%;
   background: #B43104;
-  color: #000000 !important;
+  color: white;
+}
 
+#welcome {
+  color: white;
 }
