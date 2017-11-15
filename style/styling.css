@@ -100,6 +100,7 @@ after { clear: both; }
   margin-top: 10px;
   margin-bottom: 10px;
   float: right;
+  display: block;
 }
 
 #logout {
