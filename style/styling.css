@@ -98,9 +98,8 @@ after { clear: both; }
 
 #logoutWrapper {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-right: 10px;
   float: right;
-  display: block;
 }
 
 #logout {
