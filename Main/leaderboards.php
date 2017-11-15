@@ -44,7 +44,13 @@
 																		flag5 + flag6 + flag7 + flag8 + flag9)*10) +
 																	((hint1 + hint2 + hint3 + hint4 +
 																		hint5 + hint6 + hint7 + hint8 + hint9)*-5)
-																) AS `points`
+																) AS `points`,
+																(
+																	CASE WHEN `end` = NULL
+																		THEN datetime(now()) - datetime(`start`)
+																		ELSE datetime(`end`) - datetime(`start`)
+																	END
+																) AS `time`
 												 FROM `users`") ) {
 				$_SESSION['ERROR'] = "Error preparing SQL statement";
 				header("Location: /Main/leaderboards.php");
