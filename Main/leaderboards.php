@@ -2,7 +2,7 @@
 	session_start();
 
 	if (!$_SESSION['logged']) {
-		$_SESSION['ERROR'] = "You must be logged to visit that page!";
+		$_SESSION['ERROR'] = "You must be logged in to visit that page!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
@@ -33,35 +33,83 @@
 	<br />
 	<br />
 
-	<?php
+	<?php$query = "";
 		include "../mysql.php";
 
 		//prepare and bind
 		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT * FROM (
-                          SELECT `username`,
-                                 (
-                                  ((flag1 + flag2 + flag3 + flag4 +
-                                    flag5 + flag6 + flag7 + flag8 + flag9)*10) +
-                                  ((hint1 + hint2 + hint3 + hint4 +
-                                    hint5 + hint6 + hint7 + hint8 + hint9)*-5)
-                                 ) AS `points`,
-                                 (
-                                  CASE
-                                    WHEN `start` AND `end`
-                                      THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
-                                    WHEN `start`
-                                      THEN CONCAT(
-                                      	SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP())),
-                                      	' - In progress'
-                                      )
-                                    ELSE 'Not Started'
-                                  END
-                                 ) AS `time` FROM `users`
-                         ) x ORDER BY `points` DESC, `time` ASC") ) {
+
+		if(isset($_POST['top'])) {
+			$query = "SELECT * FROM (
+                  SELECT `username`,
+                         (
+                          ((flag1 + flag2 + flag3 + flag4 +
+                            flag5 + flag6 + flag7 + flag8 + flag9)*10) +
+                          ((hint1 + hint2 + hint3 + hint4 +
+                            hint5 + hint6 + hint7 + hint8 + hint9)*-5)
+                         ) AS `points`,
+                         (
+                          CASE
+                            WHEN `start` AND `end`
+                              THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
+                            WHEN `start`
+                              THEN CONCAT(
+                                SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP())),
+                                ' - In progress'
+                              )
+                            ELSE 'Not Started'
+                          END
+                         ) AS `time` FROM `users`
+                ) x
+                ORDER BY `points` DESC, `time` ASC LIMIT 10";
+		} elseif($_POST['search']) {
+			$query = "SELECT * FROM (
+                  SELECT `username`,
+                         (
+                          ((flag1 + flag2 + flag3 + flag4 +
+                            flag5 + flag6 + flag7 + flag8 + flag9)*10) +
+                          ((hint1 + hint2 + hint3 + hint4 +
+                            hint5 + hint6 + hint7 + hint8 + hint9)*-5)
+                         ) AS `points`,
+                         (
+                          CASE
+                            WHEN `start` AND `end`
+                              THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
+                            WHEN `start`
+                              THEN CONCAT(
+                                SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP())),
+                                ' - In progress'
+                              )
+                            ELSE 'Not Started'
+                          END
+                         ) AS `time` FROM `users`
+                ) x
+								WHERE `username` LIKE %?%
+                ORDER BY LOCATE(?, word), `username` LIMIT 50";
+
+        $searchKey = (array_key_exists('searchKey', $_POST) && is_string($_POST['searchKey']))
+									? $_POST['searchKey'] : '';
+				if (empty($searchKey)) {
+					$_SESSION['ERROR'] = "Please specify a user to search for";
+					header("Location: /Main/main.php");
+					die();
+				}
+		} else {
+			$_SESSION['ERROR'] = "You can't access that page like that!";
+			header("Location: /Main/main.php");
+			die();
+		}
+
+		if( !$stmt->prepare($query) ) {
 				$_SESSION['ERROR'] = "Error preparing SQL statement";
 				header("Location: /Main/leaderboards.php");
 				die();
+		}
+
+		//if user is searching usernames
+		//query needs to be bound to params
+		if($_POST['search']) {
+			$stmt->bind_param("ss", $searchKey, $searchKey);
 		}
 
 		if (!$stmt->execute()){
@@ -70,14 +118,14 @@
 			die();
 		}
 		$result = $stmt->get_result();
-		printTop10($result);
+		printLeaderboard($result);
 	?>
 
 </body>
 </html>
 
 <?php
-	function printTop10( $result ) {
+	function printLeaderboard( $result ) {
 		echo "<center>";
 		echo "<table class='container'>";
 		echo "<th>Username</th>
