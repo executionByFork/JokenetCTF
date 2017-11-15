@@ -33,7 +33,7 @@
 	<br />
 	<br />
 
-	<?php$query = "";
+	<?php
 		include "../mysql.php";
 
 		//prepare and bind
