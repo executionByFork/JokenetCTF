@@ -26,6 +26,7 @@
 	</div>
 	<br />
 	<br />
+	<br />
 	<center>
 		<?php
 			print "<h1><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>";
@@ -34,7 +35,6 @@
 			}
 		?>
 	</center>
-	<br />
 	<br />
 
 	<!-- Link to JokeNet -->
