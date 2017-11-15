@@ -109,7 +109,7 @@
 		//if user is searching usernames
 		//query needs to be bound to params
 		if($_POST['search']) {
-			$likeVar = "%" . $searchKey . "%"
+			$likeVar = "%" . $searchKey . "%";
 			$stmt->bind_param("ss", $likeVar, $searchKey);
 		}
 
