@@ -29,7 +29,7 @@
 	<br />
 	<center>
 		<?php
-			print "<h1 id='welcome'><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>";
+			print "<h1 id='lg'><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>";
 			if(substr($_SESSION['username'], 0, 7) === "<script") {
 				print "<i>nice try :)</i>";
 			}
