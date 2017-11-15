@@ -28,7 +28,7 @@
 	<br />
 	<center><h1><b>
 		<?php
-			print "Welcome, " . $_SESSION['username'] . "!"
+			print "Welcome, " . htmlspecialchars($_SESSION['username']) . "!"
 		?>
 	</b></h1></center>
 	<br />
