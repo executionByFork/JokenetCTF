@@ -2,7 +2,7 @@
 	session_start();
 
 	if (!$_SESSION['logged']) {
-		$_SESSION['ERROR'] = "You must be logged to visit that page!";
+		$_SESSION['ERROR'] = "You must be logged in to visit that page!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
