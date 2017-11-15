@@ -61,6 +61,8 @@
 									? $_POST['username'] : '';
 	$password = (array_key_exists('password', $_POST) && is_string($_POST['password']))
 									? $_POST['password'] : '';
+	debug_to_console("U: " . $username);
+	debug_to_console("P: " . $password);
 
 	if (empty($username) || empty($password)) {
 		$_SESSION['ERROR'] = "You didn't fill out the form!";
@@ -68,7 +70,7 @@
 		die();
 	}
 
-	include "/mysql.php";
+	include "../mysql.php";
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
