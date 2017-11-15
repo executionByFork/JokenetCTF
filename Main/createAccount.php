@@ -71,8 +71,7 @@
 	include "../mysql.php";
 
 	$stmt = $conn->stmt_init();
-	$x = $stmt->prepare("INSERT INTO `users` (username, passHash, start) VALUES (?, ?, now())");
-	if( !$x ) {
+	if( !$stmt->prepare("INSERT INTO `users` (username, passHash, start) VALUES (?, ?, now())") ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
 		die();

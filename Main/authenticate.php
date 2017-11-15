@@ -74,8 +74,7 @@
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
-	$x = $stmt->prepare("SELECT `passHash` FROM `users` WHERE `username` = ?");
-	if( !$x ) {
+	if( !$stmt->prepare("SELECT `passHash` FROM `users` WHERE `username` = ?") ) {
 		$_SESSION['ERROR'] = "Error preparing SQL statement";
 		header("Location: /Main/authenticate.php");
 		die();
@@ -98,7 +97,7 @@
 		header("Location: /Main/authenticate.php");
 		die();
 	} 
-	if ( !(password_verify($password, $passHash)) ) {
+	if ( !password_verify($password, $passHash) ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
