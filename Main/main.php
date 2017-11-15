@@ -22,9 +22,8 @@
 </head>
 <body>
 	
-	<div>
-		<h3 id="logout"><a href="/Main/logout.php">Logout</a></h3>
-	</div>
+	<a id="logout" href="/Main/logout.php"><button>Logout</button></a>
+	
 	<br />
 	<center>
 		<?php

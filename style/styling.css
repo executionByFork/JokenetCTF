@@ -97,15 +97,16 @@ after { clear: both; }
 }
 
 #logout {
+  text-align: center;
   background: #b5cd60;
   border: 0;
-  width: 100%;
+  width: 30px;
   height: 40px;
   border-radius: 3px;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  margin-bottom: 5px;
+  margin: auto;
 }
 #logout:hover {
   background: #16aa56;
