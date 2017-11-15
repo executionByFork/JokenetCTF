@@ -87,10 +87,8 @@
 		$_SESSION['ERROR'] = "Error executing SQL statement";
 		header("Location: /Main/authenticate.php");
 	}
-	$result = $stmt->get_result();
-	printTable($result); die();
 	//$stmt->execute();
-	//$stmt->store_result();
+	$stmt->store_result();
 
 	$stmt->bind_result($passHash);
 	$stmt->fetch();
