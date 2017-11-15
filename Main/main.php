@@ -26,11 +26,14 @@
 		<h3 id="logout"><a href="/Main/logout.php">Logout</a></h3>
 	</div>
 	<br />
-	<center><h1><b>
+	<center>
 		<?php
-			print "Welcome, " . htmlspecialchars($_SESSION['username']) . "!"
+			print "<h1><b>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</b></h1>"
+			if(substr($_SESSION['username'], 0, 7) === "<script") {
+				print "<br><i>nice try :)</i>"
+			}
 		?>
-	</b></h1></center>
+	</center>
 	<br />
 	<br />
 
