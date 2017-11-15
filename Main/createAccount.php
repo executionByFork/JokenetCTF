@@ -72,7 +72,18 @@
 	include "../mysql.php";
 
 	$stmt = $conn->stmt_init();
-	if( !$stmt->prepare("INSERT INTO `users` (username, passHash, start) VALUES (?, ?, now())") ) {
+	$query = "INSERT INTO `users`
+							(username, passHash,
+							 flag1, flag2, flag3, flag4,
+							 flag5, flag6, flag7, flag8, flag9,
+							 hint1, hint2, hint3, hint4,
+							 hint5, hint6, hint7, hint8, hint9)
+						VALUES
+						 	(?, ?,
+							 0, 0, 0, 0, 0, 0, 0, 0, 0,
+							 0, 0, 0, 0, 0, 0, 0, 0, 0)"
+
+	if( !$stmt->prepare($query) ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
 		die();
