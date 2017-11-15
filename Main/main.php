@@ -8,7 +8,7 @@
 	}
 
 	if( isset($_SESSION['ERROR']) ) {
-		echo "<b>" . $_SESSION['ERROR'] . "</b>";
+		echo "<div id='error'><b>" . $_SESSION['ERROR'] . "</b></div>";
     unset($_SESSION['ERROR']);
 	}
 ?>

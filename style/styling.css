@@ -100,6 +100,17 @@ after { clear: both; }
   text-align: right;
 }
 
+#error {
+  text-align: center;
+  margin: auto;
+  padding: 22px 22px 22px 22px;
+  width: 100%;
+  border-radius: 5px;
+  background: #B43104;
+  color: white;
+
+}
+
 .jokeNetLogin { 
   height:110px;
   width:190px;
