@@ -87,5 +87,5 @@
 	$_SESSION['username'] = $username;
 
 	header("Location: /Main/main.php");
-
+	exit();
 ?>

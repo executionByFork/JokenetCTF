@@ -112,6 +112,7 @@
 	$_SESSION['logged'] = 1;
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	header("Location: /Main/main.php");
+	exit();
 
 
 
