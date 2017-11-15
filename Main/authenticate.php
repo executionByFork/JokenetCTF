@@ -78,11 +78,9 @@
 		header("Location: /Main/authenticate.php");
 		die();
 	}
-	$stmt->bind_param("s", $form_username);
+	$stmt->bind_param("s", $username);
 
 	//set variables and execute
-	$form_username = stripslashes($username);
-	$raw_password = stripslashes($password);
 	if (!$stmt->execute()){
 		$_SESSION['ERROR'] = "Error executing SQL statement";
 		header("Location: /Main/authenticate.php");
@@ -101,7 +99,7 @@
 		header("Location: /Main/authenticate.php");
 		die();
 	} 
-	if ( !(password_verify($raw_password, $passHash)) ) {
+	if ( !(password_verify($password, $passHash)) ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();

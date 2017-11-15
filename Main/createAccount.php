@@ -51,11 +51,11 @@
 	}
 
 	$username = (array_key_exists('username', $_POST) && is_string($_POST['username']))
-											? stripslashes($_POST['username']) : '';
+											? $_POST['username'] : '';
 	$password = (array_key_exists('password', $_POST) && is_string($_POST['password']))
-											? stripslashes($_POST['password']) : '';
+											? $_POST['password'] : '';
 	$passCheck = (array_key_exists('passCheck', $_POST) && is_string($_POST['passCheck']))
-											? stripslashes($_POST['passCheck']) : '';
+											? $_POST['passCheck'] : '';
 
 	if ( empty($username) || empty($password) || empty($passCheck) ) {
 		$_SESSION['ERROR'] = "You must completely fill out the form!";
