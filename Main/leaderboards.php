@@ -49,24 +49,25 @@
 			die();
 		}
 		$result = $stmt->get_result();
-		printTable($result);
+		printLeaderboard($result);
 	?>
 
 </body>
 </html>
 
 <?php
-	function printTable( $result ) {
-		echo "<br/> Rows found: " . $result->num_rows;
-		echo "<table>";
+	function printLeaderboard( $result ) {
+		echo "<center>";
+		echo "<table class='container'>";
 		echo "<th>User ID</th><th>Username</th><th>Search Key</th>";
 		while($row = $result->fetch_array(MYSQLI_NUM)) {
 			echo "<tr>";
 			foreach($row as $data) {
-				echo "<td>" . $data . "</td>";
+				echo "<td>" . htmlspecialchars($data) . "</td>";
 			}
 			echo "</tr>";
 		}
 		echo "</table>";
+		echo "</center>";
 	}
 ?>
