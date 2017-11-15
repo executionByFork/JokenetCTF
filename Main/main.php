@@ -23,7 +23,7 @@
 <body>
 	<div id="logoutWrapper">
 		<a href="/Main/logout.php"><button id="logout"><b>Logout</b></button></a>
-	<div>
+	</div>
 	<br />
 	<center>
 		<?php
