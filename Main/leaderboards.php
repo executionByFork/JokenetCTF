@@ -46,9 +46,9 @@
 																		hint5 + hint6 + hint7 + hint8 + hint9)*-5)
 																) AS `points`,
 																(
-																	CASE WHEN `end` = NULL
-																		THEN datetime(now()) - datetime(`start`)
-																		ELSE datetime(`end`) - datetime(`start`)
+																	CASE WHEN `end`
+																		THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
+																		ELSE SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP()))
 																	END
 																) AS `time`
 												 FROM `users`") ) {
@@ -75,7 +75,7 @@
 		echo "<table class='container'>";
 		echo "<th>Username</th>
 					<th>Points</th>
-					<th>TimeSpent</th>";
+					<th>Time Spent</th>";
 		while($row = $result->fetch_array(MYSQLI_NUM)) {
 			echo "<tr>";
 			foreach($row as $data) {
