@@ -22,7 +22,7 @@
 </head>
 <body>
 	
-	<a href="/Main/logout.php"><button id="logout">Logout</button></a>
+	<a href="/Main/logout.php"><button id="logout"><b>Logout</b></button></a>
 	
 	<br />
 	<center>
