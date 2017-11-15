@@ -38,20 +38,25 @@
 
 		//prepare and bind
 		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT `username`,
-																(
+		if( !$stmt->prepare("SELECT * INTO calculated
+												 FROM (
+													SELECT `username`,
+																 (
 																	((flag1 + flag2 + flag3 + flag4 +
 																		flag5 + flag6 + flag7 + flag8 + flag9)*10) +
 																	((hint1 + hint2 + hint3 + hint4 +
 																		hint5 + hint6 + hint7 + hint8 + hint9)*-5)
-																) AS `points`,
-																(
-																	CASE WHEN `end`
-																		THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
-																		ELSE SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP()))
+																 ) AS `points`,
+																 (
+																	CASE
+																		WHEN `start` AND `end`
+																			THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, `end`))
+																		WHEN `start`
+																			THEN SEC_TO_TIME(TIMESTAMPDIFF(SECOND, `start`, CURRENT_TIMESTAMP()))
+																		ELSE 'Not Started'
 																	END
-																) AS `time`
-												 FROM `users` ORDER BY `points` DESC, `time` ASC") ) {
+																 ) AS `time` FROM `users`
+												 ) ORDER BY `u`.`points` DESC, `u`.`time` ASC") ) {
 				$_SESSION['ERROR'] = "Error preparing SQL statement";
 				header("Location: /Main/leaderboards.php");
 				die();
