@@ -6,18 +6,9 @@
 		die();
 	}
 
-	debug_to_console("ERROR MSG: " . $_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
 		echo "<b>" . $_SESSION['ERROR'] . "</b>";
 		unset($_SESSION['ERROR']);
-	}
-
-	function debug_to_console( $data ) {
-		$output = $data;
-		if ( is_array( $output ) )
-			$output = implode( ',', $output);
-
-		echo '<script>console.log("' . $output . '");</script>';
 	}
 ?>
 
@@ -61,8 +52,6 @@
 									? $_POST['username'] : '';
 	$password = (array_key_exists('password', $_POST) && is_string($_POST['password']))
 									? $_POST['password'] : '';
-	debug_to_console("U: " . $username);
-	debug_to_console("P: " . $password);
 
 	if (empty($username) || empty($password)) {
 		$_SESSION['ERROR'] = "You didn't fill out the form!";
@@ -70,7 +59,7 @@
 		die();
 	}
 
-	include "../mysql.php";
+	include "/mysql.php";
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
@@ -109,21 +98,4 @@
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	header("Location: /Main/main.php");
 	exit();
-
-
-
-
-	function printTable( $result ) {
-		echo "<br/> Rows found: " . $result->num_rows;
-		echo "<table>";
-		echo "<th>User ID</th><th>Username</th><th>Search Key</th>";
-		while($row = $result->fetch_array(MYSQLI_NUM)) {
-			echo "<tr>";
-			foreach($row as $data) {
-				echo "<td>" . $data . "</td>";
-			}
-			echo "</tr>";
-		}
-		echo "</table>";
-	}
 ?>
