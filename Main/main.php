@@ -38,18 +38,18 @@
 	<br />
 
 	<!-- Link to JokeNet -->
-	<div id="main" method="POST">
+	<div id="main">
 		<h2>Start Hunting</h2>
-		<form action="startChallenge.php">
+		<form action="startChallenge.php" method="POST">
 			<input name="rules" type="submit" value="RULES" />
 			<input name="jokenetBtn" type="submit" value="Go To JokeNet" />
 		</form>
 	</div>
 
 	<!-- Flag Submission -->
-	<div id="main" method="POST">
+	<div id="main">
 		<h2>Flag Submission</h2>
-		<form action="submitFlag.php">
+		<form action="submitFlag.php" method="POST">
 			<span></span>
 				<input type="text" id="flag" placeholder="Flag Code" />
 			<input name="flag" type="submit" value="Submit" />
@@ -58,9 +58,9 @@
 	</div>
 
 	<!-- Leaderboards -->
-	<div id="main" method="POST">
+	<div id="main">
 		<h2>View Leaderboards</h2>
-		<form action="leaderboards.php">
+		<form action="leaderboards.php" method="POST">
 			<span></span>
 				<input name="searchKey" type="text" placeholder="Search by User" />
 			<input name="search" type="submit" value="Search" />
