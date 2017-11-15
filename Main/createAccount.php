@@ -78,9 +78,7 @@
 		die();
 	}
 
-	$options = [ 'cost' => 12 ];
-	$ph = password_hash($password, PASSWORD_BCRYPT, $options);
-
+	$ph = password_hash($password, PASSWORD_BCRYPT);
 	$stmt->bind_param("ss", $username, $ph);
 	$stmt->execute();
 

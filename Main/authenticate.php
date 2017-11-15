@@ -9,7 +9,7 @@
 	debug_to_console("ERROR MSG: " . $_SESSION['ERROR']);
 	if( isset($_SESSION['ERROR']) ) {
 		echo "<b>" . $_SESSION['ERROR'] . "</b>";
-    unset($_SESSION['ERROR']);
+		unset($_SESSION['ERROR']);
 	}
 
 	function debug_to_console( $data ) {
@@ -72,7 +72,7 @@
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
-	$x = $stmt->prepare("SELECT `passHash` FROM `pentest_users` WHERE `username` = ?");
+	$x = $stmt->prepare("SELECT `passHash` FROM `users` WHERE `username` = ?");
 	if( !$x ) {
 		$_SESSION['ERROR'] = "Error preparing SQL statement";
 		header("Location: /Main/authenticate.php");
@@ -83,8 +83,14 @@
 	//set variables and execute
 	$form_username = stripslashes($username);
 	$raw_password = stripslashes($password);
-	$stmt->execute();
-	$stmt->store_result();
+	if (!$stmt->execute()){
+		$_SESSION['ERROR'] = "Error executing SQL statement";
+		header("Location: /Main/authenticate.php");
+	}
+	$result = $stmt->get_result();
+	printTable($result); die();
+	//$stmt->execute();
+	//$stmt->store_result();
 
 	$stmt->bind_result($passHash);
 	$stmt->fetch();
@@ -94,7 +100,8 @@
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
-	} elseif ( !(password_verify($raw_password, $passHash)) ) {
+	} 
+	if ( !(password_verify($raw_password, $passHash)) ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
