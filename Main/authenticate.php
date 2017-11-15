@@ -72,8 +72,7 @@
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();
-	$x = $stmt->prepare("SELECT `username`, `passHash` FROM `pentest_users`
-											 WHERE `username` = ?");
+	$x = $stmt->prepare("SELECT `passHash` FROM `pentest_users` WHERE `username` = ?");
 	if( !$x ) {
 		$_SESSION['ERROR'] = "Error preparing SQL statement";
 		header("Location: /Main/authenticate.php");
@@ -87,8 +86,9 @@
 	$stmt->execute();
 	$stmt->store_result();
 
-	$stmt->bind_result($u, $passHash);
+	$stmt->bind_result($passHash);
 	$stmt->fetch();
+	debug_to_console($stmt->num_rows);
 
 	if ( $stmt->num_rows == 0 ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
@@ -105,6 +105,9 @@
 	$_SESSION['logged'] = 1;
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	header("Location: /Main/main.php");
+
+
+
 
 	function printTable( $result ) {
 		echo "<br/> Rows found: " . $result->num_rows;

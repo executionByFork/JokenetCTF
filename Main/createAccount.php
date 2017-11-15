@@ -63,7 +63,7 @@
 		die();
 	}
 	if ( !($password === $passCheck) ) {
-		$_SESSION['ERROR'] = "Password feilds must match!";
+		$_SESSION['ERROR'] = "Password fields must match!";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
@@ -71,8 +71,7 @@
 	include "../mysql.php";
 
 	$stmt = $conn->stmt_init();
-	$x = $stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start)
-											 VALUES (?, ?, now())");
+	$x = $stmt->prepare("INSERT INTO `pentest_users` (username, passHash, start) VALUES (?, ?, now())");
 	if( !$x ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
