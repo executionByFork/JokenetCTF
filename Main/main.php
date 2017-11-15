@@ -40,8 +40,9 @@
 	<!-- Link to JokeNet -->
 	<div id="main">
 		<h2>Start Hunting</h2>
-		<form action="gotoJokeNet.php">
+		<form action="startChallenge.php">
 			<input name="jokenetBtn" type="submit" value="Go To JokeNet" />
+			<input name="rules" type="submit" value="RULES" />
 		</form>
 	</div>
 
