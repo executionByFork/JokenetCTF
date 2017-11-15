@@ -74,6 +74,7 @@
 	if (!$stmt->execute()){
 		$_SESSION['ERROR'] = "Error executing SQL statement";
 		header("Location: /Main/authenticate.php");
+		die();
 	}
 	//$stmt->execute();
 	$stmt->store_result();

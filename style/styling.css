@@ -101,7 +101,6 @@ after { clear: both; }
   margin-right: 10px;
   float: right;
 }
-
 #logout {
   text-align: center;
   background: #b5cd60;
@@ -115,6 +114,27 @@ after { clear: both; }
   margin: auto;
 }
 #logout:hover {
+  background: #16aa56;
+}
+
+#homeWrapper {
+  margin-top: 10px;
+  margin-left: 10px;
+  float: left;
+}
+#home {
+  text-align: center;
+  background: #b5cd60;
+  border: 0;
+  width: 60px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin: auto;
+}
+#home:hover {
   background: #16aa56;
 }
 
