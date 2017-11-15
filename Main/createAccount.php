@@ -85,7 +85,7 @@
 	$stmt->bind_param("ss", $username, $ph);
 	$stmt->execute();
 
-	session_regenerate_id();
+	//session_regenerate_id();
 	$_SESSION['logged'] = 1;
 	$_SESSION['username'] = $username;
 

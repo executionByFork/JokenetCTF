@@ -90,7 +90,7 @@
 	$stmt->bind_result($u, $passHash);
 	$stmt->fetch();
 
-	if ( !($stmt->num_rows) ) {
+	if ( $stmt->num_rows == 0 ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
@@ -101,8 +101,22 @@
 	}
 
 	//Set user state to logged in
-	session_regenerate_id();
+	//session_regenerate_id();
 	$_SESSION['logged'] = 1;
 	$_SESSION['username'] = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 	header("Location: /Main/main.php");
+
+	function printTable( $result ) {
+		echo "<br/> Rows found: " . $result->num_rows;
+		echo "<table>";
+		echo "<th>User ID</th><th>Username</th><th>Search Key</th>";
+		while($row = $result->fetch_array(MYSQLI_NUM)) {
+			echo "<tr>";
+			foreach($row as $data) {
+				echo "<td>" . $data . "</td>";
+			}
+			echo "</tr>";
+		}
+		echo "</table>";
+	}
 ?>
