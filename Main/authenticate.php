@@ -76,7 +76,6 @@
 		header("Location: /Main/authenticate.php");
 		die();
 	}
-	//$stmt->execute();
 	$stmt->store_result();
 
 	$stmt->bind_result($passHash);
@@ -86,7 +85,7 @@
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
-	} 
+	}
 	if ( !password_verify($password, $passHash) ) {
 		$_SESSION['ERROR'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");

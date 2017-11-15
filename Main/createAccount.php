@@ -72,6 +72,25 @@
 	include "../mysql.php";
 
 	$stmt = $conn->stmt_init();
+	if( !$stmt->prepare("SELECT * FROM `users` WHERE `username` = ?") ) {
+		$_SESSION['ERROR'] = "Problem preparing SQL statement";
+		header("Location: /Main/createAccount.php");
+		die();
+	}
+	$stmt->bind_param("s", $username);
+	if (!$stmt->execute()){
+		$_SESSION['ERROR'] = "Error executing SQL statement";
+		header("Location: /Main/createAccount.php");
+		die();
+	}
+	$stmt->store_result();
+	if ( $stmt->num_rows ) {
+		$_SESSION['ERROR'] = "Sorry, that username is already registered";
+		header("Location: /Main/createAccount.php");
+		die();
+	}
+
+
 	$query = "INSERT INTO `users`
 							(username, passHash,
 							 flag1, flag2, flag3, flag4,
@@ -91,7 +110,11 @@
 
 	$ph = password_hash($password, PASSWORD_BCRYPT);
 	$stmt->bind_param("ss", $username, $ph);
-	$stmt->execute();
+	if (!$stmt->execute()){
+		$_SESSION['ERROR'] = "Error executing SQL statement";
+		header("Location: /Main/createAccount.php");
+		die();
+	}
 
 	//session_regenerate_id();
 	$_SESSION['logged'] = 1;
