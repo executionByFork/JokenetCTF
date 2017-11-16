@@ -23,19 +23,19 @@
 
 	if( !$stmt->prepare($query) ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
-		header("Location: /Main/createAccount.php");
+		header("Location: /Main/hints.php");
 		die();
 	}
 	$stmt->bind_param("s", $_SESSION['username']);
 	if (!$stmt->execute()){
 		$_SESSION['ERROR'] = "Error executing SQL statement";
-		header("Location: /Main/createAccount.php");
+		header("Location: /Main/hints.php");
 		die();
 	}
 	$stmt->store_result();
 	if ( !$stmt->num_rows ) {
 		$_SESSION['ERROR'] = "Fatal Error when retrieving user data from database";
-		header("Location: /Main/createAccount.php");
+		header("Location: /Main/hints.php");
 		die();
 	}
 
@@ -59,13 +59,13 @@
 
 	if( !$stmt->prepare($query) ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
-		header("Location: /Main/createAccount.php");
+		header("Location: /Main/hints.php");
 		die();
 	}
 	$stmt->bind_param("iiiiiiiii", $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9);
 	if (!$stmt->execute()){
 		$_SESSION['ERROR'] = "Error executing SQL statement";
-		header("Location: /Main/createAccount.php");
+		header("Location: /Main/hints.php");
 		die();
 	}
 ?>
