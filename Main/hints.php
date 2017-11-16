@@ -41,6 +41,9 @@
 			<h2>Clue 1:</h2>
 			<h3><i>Clue 1 here</i></h3>
 			<input name="Hint1" type="submit" value="View Hint 1" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
 			<hr />
 			<br />
 			<h2>Clue 2:</h2>
@@ -56,6 +59,7 @@
 			<h2>Clue 4:</h2>
 			<h3><i>Clue 1 here</i></h3>
 			<input name="Hint4" type="submit" value="View Hint 4" />
+			<hr />
 		</form>
 	</div>
 
