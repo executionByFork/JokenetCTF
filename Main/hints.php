@@ -16,10 +16,10 @@
 
 	$stmt = $conn->stmt_init();
 	$query = "SELECT `flag1`, `flag2`, `flag3`, `flag4`,
-									 `flag5`, `flag6`, `flag7`, `flag8`, `flag9`,
-									 `hint1`, `hint2`, `hint3`, `hint4`,
-									 `hint5`, `hint6`, `hint7`, `hint8`, `hint9` 
-						FROM `users` WHERE `username` = ?";
+                   `flag5`, `flag6`, `flag7`, `flag8`, `flag9`,
+                   `hint1`, `hint2`, `hint3`, `hint4`,
+                   `hint5`, `hint6`, `hint7`, `hint8`, `hint9`
+            FROM `users` WHERE `username` = ?";
 
 	if( !$stmt->prepare($query) ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
@@ -41,7 +41,26 @@
 
 	$stmt->bind_result($f1, $f2, $f3, $f4, $f5, $f6, $f7, $f8, $f9, 
 										 $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9);
-
+	
+	
+	debug_to_console("flag1:" . $f1);
+	debug_to_console("flag2:" . $f2);
+	debug_to_console("flag3:" . $f3);
+	debug_to_console("flag4:" . $f4);
+	debug_to_console("flag5:" . $f5);
+	debug_to_console("flag6:" . $f6);
+	debug_to_console("flag7:" . $f7);
+	debug_to_console("flag8:" . $f8);
+	debug_to_console("flag9:" . $f9);
+	debug_to_console("hint1:" . $h1);
+	debug_to_console("hint2:" . $h2);
+	debug_to_console("hint3:" . $h3);
+	debug_to_console("hint4:" . $h4);
+	debug_to_console("hint5:" . $h5);
+	debug_to_console("hint6:" . $h6);
+	debug_to_console("hint7:" . $h7);
+	debug_to_console("hint8:" . $h8);
+	debug_to_console("hint9:" . $h9);
 	if($_POST['Hint1']) $h1 = 1;
 	if($_POST['Hint2']) $h2 = 1;
 	if($_POST['Hint3']) $h3 = 1;
@@ -51,11 +70,19 @@
 	if($_POST['Hint7']) $h7 = 1;
 	if($_POST['Hint8']) $h8 = 1;
 	if($_POST['Hint9']) $h9 = 1;
-
+	debug_to_console("hint1 after:" . $h1);
+	debug_to_console("hint2 after:" . $h2);
+	debug_to_console("hint3 after:" . $h3);
+	debug_to_console("hint4 after:" . $h4);
+	debug_to_console("hint5 after:" . $h5);
+	debug_to_console("hint6 after:" . $h6);
+	debug_to_console("hint7 after:" . $h7);
+	debug_to_console("hint8 after:" . $h8);
+	debug_to_console("hint9 after:" . $h9);
 	$query = "UPDATE `users`
-						SET `hint1` = ?, `hint2` = ?, `hint3` = ?, `hint4` = ?,
-								`hint5` = ?, `hint6` = ?, `hint7` = ?, `hint8` = ?, `hint9` = ? 
-						WHERE `username` = ?";
+            SET `hint1` = ?, `hint2` = ?, `hint3` = ?, `hint4` = ?,
+                `hint5` = ?, `hint6` = ?, `hint7` = ?, `hint8` = ?, `hint9` = ? 
+            WHERE `username` = ?";
 
 	if( !$stmt->prepare($query) ) {
 		$_SESSION['ERROR'] = "Problem preparing SQL statement";
@@ -171,3 +198,13 @@
 
 </body>
 </html>
+
+<?php
+	function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+      $output = implode( ',', $output);
+
+    echo '<script>console.log("' . $output . '");</script>';
+  }
+?>
