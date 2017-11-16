@@ -11,6 +11,9 @@ echo '
 			<li><a href="#about">About</a></li>
 		</ul>
 	</nav>
+	<div id="topRight">
+		<a href="/JokeNet/logout.php"><button id="logout"><b>Logout</b></button></a>
+	</div>
 ';
 
 ?>
