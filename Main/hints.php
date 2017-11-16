@@ -95,6 +95,7 @@
 	<br />
 	<center>
 		<h1 id='lg'><b>Hints</b></h1>
+		<b>WARNING!</b> If you unlock a hint, you can only earn 50% of the points for that flag!
 	<br />
 	</center>
 
