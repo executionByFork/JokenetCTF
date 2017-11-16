@@ -150,6 +150,18 @@ after { clear: both; }
   color: white;
 }
 
+#notify {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  text-align: center;
+  margin: auto;
+  padding: 22px 22px 22px 22px;
+  width: 100%;
+  background: #B43104;
+  color: #1594c6;
+}
+
 #lg {
   color: lightgrey;
 }

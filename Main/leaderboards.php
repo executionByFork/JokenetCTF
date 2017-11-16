@@ -7,11 +7,8 @@
 		die();
 	}
 
-	if( isset($_SESSION['ERROR']) ) {
-		echo "<div id='error'><b>" . $_SESSION['ERROR'] . "</b></div>";
-		unset($_SESSION['ERROR']);
-		die();
-	}
+	include "../functions.php";
+	checkForBanner();
 ?>
 
 <!DOCTYPE html>
