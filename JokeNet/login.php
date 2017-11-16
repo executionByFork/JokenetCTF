@@ -7,12 +7,12 @@
 </head>
 <body>
 
-	<center><h3>Login</h3></center>
+	<center><h3>Login to JokeNet!</h3></center>
 	<form action="" method="POST" class="jokeNetLogin">
 		<input type="text" placeholder="Username" name="username">
 		<input type="password" placeholder="Password" name="password">
 		<input type="submit" value="Sign In">
-		<a href="#createJoker" class="forgot">Create Account</a>
+		<a href="signup.php">Create Account</a>
 	</form>
 
 </body>
