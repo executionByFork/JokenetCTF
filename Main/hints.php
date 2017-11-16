@@ -37,21 +37,25 @@
 	</center>
 
 	<div id="main">
-		<h2><b>Clue x:</b></h2>
-		<h3><i>Clue x here</i></h3>
 		<form action="startChallenge.php" method="POST">
 			<h2>Clue 1:</h2>
 			<h3><i>Clue 1 here</i></h3>
 			<input name="Hint1" type="submit" value="View Hint 1" />
+			<hr />
 			<br />
 			<h2>Clue 2:</h2>
-			<h5<i>Clue 2 here</i></h5>
-			<input name="Hint1" type="submit" value="View Hint 1" />
+			<h3><i>Clue 2 here</i></h3>
+			<input name="Hint2" type="submit" value="View Hint 2" />
+			<hr />
 			<br />
 			<h2>Clue 3:</h2>
-			<i>Clue 3 here</i>
-			<input name="Hint1" type="submit" value="View Hint 1" />
+			<h3><i>Clue 3 here</i></h3>
+			<input name="Hint3" type="submit" value="View Hint 3" />
+			<hr />
 			<br />
+			<h2>Clue 4:</h2>
+			<h3><i>Clue 1 here</i></h3>
+			<input name="Hint4" type="submit" value="View Hint 4" />
 		</form>
 	</div>
 
