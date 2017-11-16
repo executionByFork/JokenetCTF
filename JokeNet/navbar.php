@@ -10,10 +10,10 @@ echo '
 			<li><a href="#profile">Profile</a></li>
 			<li><a href="#about">About</a></li>
 		</ul>
+		<div id="topRight">
+			<a href="/JokeNet/logout.php"><button id="logout"><b>Logout</b></button></a>
+		</div>
 	</nav>
-	<div id="topRight">
-		<a href="/JokeNet/logout.php"><button id="logout"><b>Logout</b></button></a>
-	</div>
 ';
 
 ?>
