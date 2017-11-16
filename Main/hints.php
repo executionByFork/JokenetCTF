@@ -40,7 +40,7 @@
 		<form action="startChallenge.php" method="POST">
 			<h2>Clue 1:</h2>
 			<h3><i>Clue 1 here</i></h3>
-			<input name="Hint1" type="submit" value="View Hint 1" />
+			<input name="Hint1" type="submit" value="Unlock Hint 1" />
 			<?php
 				print "<i>Here is the Hint text</i>"
 			?>
@@ -48,17 +48,66 @@
 			<br />
 			<h2>Clue 2:</h2>
 			<h3><i>Clue 2 here</i></h3>
-			<input name="Hint2" type="submit" value="View Hint 2" />
+			<input name="Hint2" type="submit" value="Unlock Hint 2" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
 			<hr />
 			<br />
 			<h2>Clue 3:</h2>
 			<h3><i>Clue 3 here</i></h3>
-			<input name="Hint3" type="submit" value="View Hint 3" />
+			<input name="Hint3" type="submit" value="Unlock Hint 3" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
 			<hr />
 			<br />
 			<h2>Clue 4:</h2>
-			<h3><i>Clue 1 here</i></h3>
-			<input name="Hint4" type="submit" value="View Hint 4" />
+			<h3><i>Clue 4 here</i></h3>
+			<input name="Hint4" type="submit" value="Unlock Hint 4" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
+			<hr />
+			<br />
+			<h2>Clue 5:</h2>
+			<h3><i>Clue 5 here</i></h3>
+			<input name="Hint5" type="submit" value="Unlock Hint 5" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
+			<hr />
+			<br />
+			<h2>Clue 6:</h2>
+			<h3><i>Clue 6 here</i></h3>
+			<input name="Hint6" type="submit" value="Unlock Hint 6" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
+			<hr />
+			<br />
+			<h2>Clue 7:</h2>
+			<h3><i>Clue 7 here</i></h3>
+			<input name="Hint7" type="submit" value="Unlock Hint 7" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
+			<hr />
+			<br />
+			<h2>Clue 8:</h2>
+			<h3><i>Clue 8 here</i></h3>
+			<input name="Hint8" type="submit" value="Unlock Hint 8" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
+			<hr />
+			<br />
+			<h2>Clue 9:</h2>
+			<h3><i>Clue 9 here</i></h3>
+			<input name="Hint9" type="submit" value="Unlock Hint 9" />
+			<?php
+				print "<i>Here is the Hint text</i>"
+			?>
 			<hr />
 		</form>
 	</div>
