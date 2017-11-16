@@ -41,6 +41,7 @@
 
 	$stmt->bind_result($f1, $f2, $f3, $f4, $f5, $f6, $f7, $f8, $f9, 
 										 $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9);
+	$stmt->fetch();
 	
 	
 	debug_to_console("flag1:" . $f1);
