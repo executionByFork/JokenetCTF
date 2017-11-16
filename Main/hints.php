@@ -62,7 +62,7 @@
 		header("Location: /Main/hints.php");
 		die();
 	}
-	$stmt->bind_param("iiiiiiiii", $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9);
+	$stmt->bind_param("iiiiiiiiis", $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9, $_SESSION['username']);
 	if (!$stmt->execute()){
 		$_SESSION['ERROR'] = "Error executing SQL statement";
 		header("Location: /Main/hints.php");

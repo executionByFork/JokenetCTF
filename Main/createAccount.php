@@ -2,7 +2,7 @@
 	session_start();
 
 	if ($_SESSION['logged']) {
-		$_SESSION['ERROR'] = "You must be logged out to create and account!";
+		$_SESSION['ERROR'] = "You must be logged out to create an account!";
 		header("Location: /Main/main.php");
 		die();
 	}
