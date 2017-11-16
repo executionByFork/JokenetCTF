@@ -48,9 +48,9 @@
 	<!-- Flag Submission -->
 	<div id="main">
 		<h2>Flag Submission</h2>
-		<form action="submitFlag.php" method="POST">
+		<form action="" method="POST">
 			<span></span>
-				<input type="text" id="flag" placeholder="Flag Code" />
+				<input type="text" name="flagCode" placeholder="Flag Code" />
 			<input name="flag" type="submit" value="Submit" />
 			<a href="hints.php">Need Hints?</a>
 		</form>
@@ -69,3 +69,84 @@
 
 </body>
 </html>
+
+<?php
+	if ( !isset($_POST['flag']) ) {
+		die();
+	}
+
+	include "../mysql.php";
+
+	//prepare and bind
+	$stmt = $conn->stmt_init();
+	if( !$stmt->prepare("SELECT `flagID`, `flagHash` FROM `flags` WHERE `flagHash` = ?") ) {
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error preparing SQL statement";
+		header("Location: /Main/main.php");
+		die();
+	}
+	$stmt->bind_param("s", $fh);
+
+	$fh = hash("sha256", $_POST['flagCode']);
+
+	//set variables and execute
+	if (!$stmt->execute()){
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL statement";
+		header("Location: /Main/main.php");
+		die();
+	}
+	$stmt->store_result();
+	$stmt->bind_result($id, $hash);
+
+	if ( !$stmt->num_rows ) {
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "That FLAG is not valid";
+		header("Location: /Main/main.php");
+		die();
+	}
+	$stmt->fetch();
+
+	switch ($id) {
+		case 1:
+			$query = "UPDATE `users` SET flag1=1 WHERE `username` = ?";
+			break;
+		case 2:
+			$query = "UPDATE `users` SET flag2=1 WHERE `username` = ?";
+			break;
+		case 3:
+			$query = "UPDATE `users` SET flag3=1 WHERE `username` = ?";
+			break;
+		case 4:
+			$query = "UPDATE `users` SET flag4=1 WHERE `username` = ?";
+			break;
+		case 5:
+			$query = "UPDATE `users` SET flag5=1 WHERE `username` = ?";
+			break;
+		case 6:
+			$query = "UPDATE `users` SET flag6=1 WHERE `username` = ?";
+			break;
+		case 7:
+			$query = "UPDATE `users` SET flag7=1 WHERE `username` = ?";
+			break;
+		case 8:
+			$query = "UPDATE `users` SET flag8=1 WHERE `username` = ?";
+			break;
+		case 9:
+			$query = "UPDATE `users` SET flag9=1 WHERE `username` = ?";
+			break;
+	}
+	if( !$stmt->prepare($query) ) {
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error preparing SQL statement";
+		header("Location: /Main/main.php");
+		die();
+	}
+	$stmt->bind_param("s", $_SESSION['username']);
+	if (!$stmt->execute()){
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL UPDATE statement";
+		header("Location: /Main/main.php");
+		die();
+	}
+?>
