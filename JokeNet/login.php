@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="/style/styling.css" />
+	<link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
 	<title>JokeNet Login</title>
 </head>
 <body>
 
 	<center><h3>Login</h3></center>
-	<form action="authenticate.php" method="POST" class="jokeNetLogin">
+	<form action="" method="POST" class="jokeNetLogin">
 		<input type="text" placeholder="Username" name="username">
 		<input type="password" placeholder="Password" name="password">
 		<input type="submit" value="Sign In">
