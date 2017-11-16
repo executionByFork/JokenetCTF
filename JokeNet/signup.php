@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<center><h3>Sign Up for JokeNet!</h3></center>
 <form action="" method="POST" class="jokeNetCreate">
   <input type="text" placeholder="Username" name="username">
   <input type="password" placeholder="Password" name="password">

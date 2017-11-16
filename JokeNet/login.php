@@ -63,7 +63,7 @@
            </script>";
     die();
 	}
-	elseif ( !($passHash === md5($raw_password)) ) {
+	elseif ( !($passHash === md5($password)) ) {
     print "<script type=\"text/javascript\">
              alert(\"Incorrect Password!\");
            </script>";
