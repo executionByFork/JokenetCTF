@@ -2,7 +2,8 @@
 	session_start();
 
 	if ($_SESSION['logged']) {
-		$_SESSION['ERROR'] = "You must be logged out to create an account!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "You must be logged out to create an account!";
 		header("Location: /Main/main.php");
 		die();
 	}
@@ -57,12 +58,14 @@
 											? $_POST['passCheck'] : '';
 
 	if ( empty($username) || empty($password) || empty($passCheck) ) {
-		$_SESSION['ERROR'] = "You must completely fill out the form!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "You must completely fill out the form!";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
 	if ( !($password === $passCheck) ) {
-		$_SESSION['ERROR'] = "Password fields must match!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Password fields must match!";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
@@ -71,19 +74,22 @@
 
 	$stmt = $conn->stmt_init();
 	if( !$stmt->prepare("SELECT * FROM `users` WHERE `username` = ?") ) {
-		$_SESSION['ERROR'] = "Problem preparing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
 	$stmt->bind_param("s", $username);
 	if (!$stmt->execute()){
-		$_SESSION['ERROR'] = "Error executing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL statement";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
 	$stmt->store_result();
 	if ( $stmt->num_rows ) {
-		$_SESSION['ERROR'] = "Sorry, that username is already registered";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Sorry, that username is already registered";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
@@ -101,7 +107,8 @@
 							 0, 0, 0, 0, 0, 0, 0, 0, 0)";
 
 	if( !$stmt->prepare($query) ) {
-		$_SESSION['ERROR'] = "Problem preparing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Problem preparing SQL statement";
 		header("Location: /Main/createAccount.php");
 		die();
 	}
@@ -109,7 +116,8 @@
 	$ph = password_hash($password, PASSWORD_BCRYPT);
 	$stmt->bind_param("ss", $username, $ph);
 	if (!$stmt->execute()){
-		$_SESSION['ERROR'] = "Error executing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL statement";
 		header("Location: /Main/createAccount.php");
 		die();
 	}

@@ -52,7 +52,8 @@
 									? $_POST['password'] : '';
 
 	if (empty($username) || empty($password)) {
-		$_SESSION['ERROR'] = "You didn't fill out the form!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "You didn't fill out the form!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
@@ -62,7 +63,8 @@
 	//prepare and bind
 	$stmt = $conn->stmt_init();
 	if( !$stmt->prepare("SELECT `passHash` FROM `users` WHERE `username` = ?") ) {
-		$_SESSION['ERROR'] = "Error preparing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error preparing SQL statement";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
@@ -70,7 +72,8 @@
 
 	//set variables and execute
 	if (!$stmt->execute()){
-		$_SESSION['ERROR'] = "Error executing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL statement";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
@@ -80,12 +83,14 @@
 	$stmt->fetch();
 
 	if ( !$stmt->num_rows ) {
-		$_SESSION['ERROR'] = "Incorrect Username or Password!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
 	if ( !password_verify($password, $passHash) ) {
-		$_SESSION['ERROR'] = "Incorrect Username or Password!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Incorrect Username or Password!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}

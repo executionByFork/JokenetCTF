@@ -2,7 +2,8 @@
 	session_start();
 
 	if (!$_SESSION['logged']) {
-		$_SESSION['ERROR'] = "You must be logged in to visit that page!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "You must be logged in to visit that page!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
@@ -87,18 +88,21 @@
         $searchKey = (array_key_exists('searchKey', $_POST) && is_string($_POST['searchKey']))
 									? $_POST['searchKey'] : '';
 				if (empty($searchKey)) {
-					$_SESSION['ERROR'] = "Please specify a user to search for";
+					$_SESSION['error'] = 1;
+					$_SESSION['msg'] = "Please specify a user to search for";
 					header("Location: /Main/main.php");
 					die();
 				}
 		} else {
-			$_SESSION['ERROR'] = "You can't access that page like that!";
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "You can't access that page like that!";
 			header("Location: /Main/main.php");
 			die();
 		}
 
 		if( !$stmt->prepare($query) ) {
-				$_SESSION['ERROR'] = "Error preparing SQL statement";
+				$_SESSION['error'] = 1;
+				$_SESSION['msg'] = "Error preparing SQL statement";
 				header("Location: /Main/leaderboards.php");
 				die();
 		}
@@ -111,7 +115,8 @@
 		}
 
 		if (!$stmt->execute()){
-			$_SESSION['ERROR'] = "Error executing SQL statement";
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error executing SQL statement";
 			header("Location: /Main/leaderboards.php");
 			die();
 		}

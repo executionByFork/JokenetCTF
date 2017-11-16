@@ -2,7 +2,8 @@
 	session_start();
 
 	if (!$_SESSION['logged']) {
-		$_SESSION['ERROR'] = "You must be logged in to visit that page!";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "You must be logged in to visit that page!";
 		header("Location: /Main/authenticate.php");
 		die();
 	}
@@ -20,19 +21,22 @@
             FROM `users` WHERE `username` = ?";
 
 	if( !$stmt->prepare($query) ) {
-		$_SESSION['ERROR'] = "Problem preparing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Problem preparing SQL statement";
 		header("Location: /Main/hints.php");
 		die();
 	}
 	$stmt->bind_param("s", $_SESSION['username']);
 	if (!$stmt->execute()){
-		$_SESSION['ERROR'] = "Error executing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL statement";
 		header("Location: /Main/hints.php");
 		die();
 	}
 	$stmt->store_result();
 	if ( !$stmt->num_rows ) {
-		$_SESSION['ERROR'] = "Fatal Error when retrieving user data from database";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Fatal Error when retrieving user data from database";
 		header("Location: /Main/hints.php");
 		die();
 	}
@@ -57,13 +61,15 @@
             WHERE `username` = ?";
 
 	if( !$stmt->prepare($query) ) {
-		$_SESSION['ERROR'] = "Problem preparing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Problem preparing SQL statement";
 		header("Location: /Main/hints.php");
 		die();
 	}
 	$stmt->bind_param("iiiiiiiiis", $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9, $_SESSION['username']);
 	if (!$stmt->execute()){
-		$_SESSION['ERROR'] = "Error executing SQL statement";
+		$_SESSION['error'] = 1;
+		$_SESSION['msg'] = "Error executing SQL statement";
 		header("Location: /Main/hints.php");
 		die();
 	}
