@@ -75,5 +75,5 @@
   setcookie("username", $username);
   header("Location: topJokes.php");
   exit();
-}
 
+?>
