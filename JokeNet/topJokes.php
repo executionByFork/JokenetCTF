@@ -19,9 +19,12 @@
 	<div class="jokePost">
 		<b>Posted by: <a href="profile.php?user=James">James</a></b>
 		<hr />
-		This is my joke <br />
-		I hope you like it
-		-- James
+		<pre>
+			This is my joke
+			I hope you like it
+			-- James
+		</pre>
+		<hr />
 		<form action="vote.php" method="POST">
 			<select>
 			  <option value="0" selected>0</option>
