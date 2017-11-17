@@ -42,9 +42,9 @@
 			  <option value="3">3</option>
 			  <option value="4">4</option>
 			  <option value="5">5</option>
-				<input type="submit" name="vote" value="Vote!">
-				<input type="hidden" name="jokeNumber" value="jokeIDhere">
 			</select>
+			<input type="submit" name="vote" value="Vote!">
+			<input type="hidden" name="jokeNumber" value="jokeIDhere">
 			<span id="rating">Current Rating: 5/5</span>
 		</form>
 	</div>

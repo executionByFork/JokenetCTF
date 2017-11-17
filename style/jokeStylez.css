@@ -47,8 +47,3 @@
 .jokePost form input[type="submit"] {
   margin-left: 5px;
 }
-.jokePost #rating {
-  box-sizing: border-box;
-  width: 50%; /* or less */
-  display: inline-block
-}
