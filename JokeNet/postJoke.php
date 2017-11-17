@@ -10,7 +10,7 @@
 
 	<?php
 		include "../mysql.php";
-		$highlightButton = 1;
+		$highlightButton = 3;
 		include "navbar.php";
 	?>
 	<br />
