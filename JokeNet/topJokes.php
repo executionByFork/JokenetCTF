@@ -46,7 +46,7 @@
 				<input type="hidden" name="jokeNumber" value="jokeIDhere">
 			</select>
 		</form>
-		<div id="rating">Current Rating: 5/5</div>
+		<span id="rating">Current Rating: 5/5</span>
 	</div>
 
 
