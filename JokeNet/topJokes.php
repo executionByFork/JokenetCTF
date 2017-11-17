@@ -39,31 +39,6 @@
 		}
 
 	?>
-	<div class="jokePost">
-		<b>Posted by: <a href="profile.php?user=James">James</a></b>
-		2017-11-15 18:08:44
-		<hr />
-		<center><pre>
-			This is my joke
-			I hope you like it
-			-- James
-		</pre></center>
-		<hr />
-		<form action="vote.php" method="POST">
-			<select>
-			  <option value="0" selected>0</option>
-			  <option value="1">1</option>
-			  <option value="2">2</option>
-			  <option value="3">3</option>
-			  <option value="4">4</option>
-			  <option value="5">5</option>
-			</select>
-			<input type="submit" name="vote" value="Vote!">
-			<input type="hidden" name="jokeNumber" value="jokeIDhere">
-			<span id="rating">Current Rating: 5/5</span>
-		</form>
-	</div>
-
 
 </body>
 </html>
