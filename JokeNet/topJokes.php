@@ -21,24 +21,22 @@
 		include "../functions.php";
 
 		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT `jokeID`, `joke`, `postedBy`, `rating` FROM") ) {
+		if( !$stmt->prepare("SELECT * FROM `jokes` ORDER BY `rating` LIMIT 10") ) {
 	    print "<script type=\"text/javascript\">
 	             alert(\"Error preparing statment\");
 	           </script>";
 	    die();
 		}
-		$stmt->bind_param("s", $username);
-
 		if (!$stmt->execute()){
 			print "<script type=\"text/javascript\">
 			         alert(\"Error executing statement\");
 			       </script>";
 			die();
 		}
-		$stmt->store_result();
-
-		$stmt->bind_result($passHash);
-		$stmt->fetch();
+		$stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
+		while($stmt->fetch()) {
+			printJoke($jokeID, $jokeText, $postedBy, $rating, $timeStamp);
+		}
 
 	?>
 	<div class="jokePost">
