@@ -12,8 +12,6 @@
 		include "../mysql.php";
 		$highlightButton = 1;
 		include "navbar.php";
-
-		//nl2br()
 	?>
 	<br />
 	<br />
@@ -22,11 +20,30 @@
 
 		include "../functions.php";
 
+		$stmt = $conn->stmt_init();
+		if( !$stmt->prepare("SELECT `jokeID`, `joke`, `postedBy`, `rating` FROM") ) {
+	    print "<script type=\"text/javascript\">
+	             alert(\"Error preparing statment\");
+	           </script>";
+	    die();
+		}
+		$stmt->bind_param("s", $username);
 
+		if (!$stmt->execute()){
+			print "<script type=\"text/javascript\">
+			         alert(\"Error executing statement\");
+			       </script>";
+			die();
+		}
+		$stmt->store_result();
+
+		$stmt->bind_result($passHash);
+		$stmt->fetch();
 
 	?>
 	<div class="jokePost">
 		<b>Posted by: <a href="profile.php?user=James">James</a></b>
+		2017-11-15 18:08:44
 		<hr />
 		<center><pre>
 			This is my joke
