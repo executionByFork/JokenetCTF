@@ -44,3 +44,9 @@
 .jokePost form {
   padding-left: 5px;
 }
+.jokePost span {
+  text-align: right;
+  padding-right: 5px;
+}
+
+  

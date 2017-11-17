@@ -18,14 +18,21 @@
 	<br />
 	<br />
 
+	<?php
+
+		include "../functions.php";
+
+
+
+	?>
 	<div class="jokePost">
 		<b>Posted by: <a href="profile.php?user=James">James</a></b>
 		<hr />
-		<center>
+		<center><pre>
 			This is my joke
 			I hope you like it
 			-- James
-		</center>
+		</pre></center>
 		<hr />
 		<form action="vote.php" method="POST">
 			<select>
@@ -39,6 +46,7 @@
 				<input type="hidden" name="jokeNumber" value="jokeIDhere">
 			</select>
 		</form>
+		<span>Current Rating: 5/5</span>
 	</div>
 
 
