@@ -22,11 +22,11 @@ echo '
 	<nav id="nav">
 		<ul class="links">
 			<h2>JokeNet</h2>
-			<li'. $top . '><a href="#top">Top Jokes</a></li>
-			<li'. $recent . '><a href="#recent">Recent Jokes</a></li>
-			<li'. $post . '><a href="#post">Post a Joke</a></li>
-			<li'. $profile . '><a href="#profile">Profile</a></li>
-			<li'. $about . '><a href="#about">About</a></li>
+			<li'. $top . '><a href="topJokes.php">Top Jokes</a></li>
+			<li'. $recent . '><a href="recentJokes.php">Recent Jokes</a></li>
+			<li'. $post . '><a href="postJoke.php">Post a Joke</a></li>
+			<li'. $profile . '><a href="profile.php">Profile</a></li>
+			<li'. $about . '><a href="about.php">About</a></li>
 		</ul>
 		<div id="topRight">
 			<a href="/JokeNet/logout.php"><button id="logout"><b>Logout</b></button></a>
