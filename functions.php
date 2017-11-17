@@ -22,10 +22,8 @@
 	function printJoke( $jokeID, $jokeText, $postedBy, $rating, $timeStamp ) {
 		echo '
 			<div class="jokePost">
-				<div id="pad">
-					<b>Posted by: <a href="profile.php?user=' . $postedBy . '">' . $postedBy . '</a></b>
-					<br />' . $timeStamp . '
-				</div>
+				<b>Posted by: <a href="profile.php?user=' . $postedBy . '">' . $postedBy . '</a></b>
+				<br />' . $timeStamp . '
 				<hr />
 				<center><pre>' . nl2br($jokeText) . '</pre></center>
 				<hr />
