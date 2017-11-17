@@ -16,7 +16,7 @@
 	<br />
 	<br />
 
-	<textarea id="addJoke"></textarea>
+	<textarea></textarea>
 
 </body>
 </html>
