@@ -42,11 +42,11 @@
   padding-bottom: 5px;
 }
 .jokePost b,
-.jokePost form,
-.submitJoke {
+.jokePost form{
   padding-left: 5px;
 }
-.jokePost form input[type="submit"] {
+.jokePost form input[type="submit"],
+.submitJoke {
   margin-left: 3px;
 }
 .jokePost #rating {
