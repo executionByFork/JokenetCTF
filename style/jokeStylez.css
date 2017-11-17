@@ -45,8 +45,7 @@
   padding-left: 5px;
 }
 .jokePost #rating {
-  float: right;
-  padding-right: 5px;
+  margin-right: 5px;
 }
 
   
