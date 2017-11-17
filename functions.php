@@ -22,12 +22,14 @@
 	function printJoke( $jokeID, $jokeText, $postedBy, $rating, $timeStamp ) {
 		echo '
 			<div class="jokePost">
-				<b>Posted by: <a href="profile.php?user=' . $postedBy . '">' . $postedBy . '</a></b>
-				<br />' . $timeStamp . '
-				<hr />
+				<span id="pad">
+					<b>Posted by: <a href="profile.php?user=' . $postedBy . '">' . $postedBy . '</a></b>
+					<br />' . $timeStamp . '
+				</span>
+				<hr />s
 				<center><pre>' . nl2br($jokeText) . '</pre></center>
 				<hr />
-				<form action="vote.php" method="POST">
+				<form action="/JokeNet/vote.php" method="POST">
 					<select>
 					  <option value="0" selected>0</option>
 					  <option value="1">1</option>

@@ -41,7 +41,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.jokePost b,
+.jokePost #pad,
 .jokePost form {
   padding-left: 5px;
 }

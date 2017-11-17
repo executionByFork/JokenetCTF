@@ -15,8 +15,15 @@
 	?>
 	<br />
 	<br />
-
-	<textarea></textarea>
+	
+	<form action="" method="POST">
+		<textarea name="jokeText"></textarea>
+		<input type="submit" name="post" value="Post to JokeNet">
+	</form>
 
 </body>
 </html>
+
+<?php
+	
+?>
