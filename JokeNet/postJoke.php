@@ -16,7 +16,7 @@
 	<br />
 	<br />
 
-	<div class="jokePost">
+	<div class="submitJoke">
 		<form action="" method="POST">
 			<textarea name="jokeText"></textarea><br />
 			<input type="submit" name="post" value="Post to JokeNet">
