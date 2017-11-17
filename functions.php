@@ -19,4 +19,29 @@
 		echo '<script>console.log("' . $output . '");</script>';
 	}
 
+	function printJoke( $jokeID, $jokeText, $postedBy, $rating, $timeStamp ) {
+		echo '
+			<div class="jokePost">
+				<b>Posted by: <a href="profile.php?user=' . $postedBy . '">' . $postedBy . '</a></b>
+				<br />' . $timeStamp . '
+				<hr />
+				<center><pre>' . nl2br($jokeText) . '</pre></center>
+				<hr />
+				<form action="vote.php" method="POST">
+					<select>
+					  <option value="0" selected>0</option>
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="5">5</option>
+					</select>
+					<input type="submit" name="vote" value="Vote!">
+					<input type="hidden" name="jokeNumber" value="' . $jokeID . '">
+					<span id="rating">Current Rating: ' . $rating . '/5</span>
+				</form>
+			</div>
+		';
+	}
+
 ?>
