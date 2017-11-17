@@ -33,6 +33,8 @@
 
 	$jokeText = (array_key_exists('jokeText', $_POST) && is_string($_POST['jokeText']))
 											? $_POST['jokeText'] : '';
+	$username = (array_key_exists('username', $_COOKIE) && is_string($_COOKIE['username']))
+											? $_COOKIE['username'] : '';
 
 	if (empty($jokeText)) {
 		print "<script type=\"text/javascript\">
@@ -54,7 +56,7 @@
 		die();
 	}
 
-	$stmt->bind_param("ss", $jokeText, $_COOKIE["username"]);
+	$stmt->bind_param("ss", $jokeText, $username);
 	if ( !$stmt->execute() ) {
 		print "<script type=\"text/javascript\">
              alert(\"Problem executing SQL statement\");
