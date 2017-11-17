@@ -12,6 +12,8 @@
 		include "../mysql.php";
 		$highlightButton = 1;
 		include "navbar.php";
+
+		//nl2br()
 	?>
 	<br />
 	<br />
@@ -19,11 +21,11 @@
 	<div class="jokePost">
 		<b>Posted by: <a href="profile.php?user=James">James</a></b>
 		<hr />
-		<pre>
+		<center>
 			This is my joke
 			I hope you like it
 			-- James
-		</pre>
+		</center>
 		<hr />
 		<form action="vote.php" method="POST">
 			<select>
