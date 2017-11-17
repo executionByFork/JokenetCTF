@@ -51,3 +51,13 @@
 .jokePost #rating {
   margin-left: 10px;
 }
+
+#addJoke {
+  margin:auto;
+  margin-bottom: 10px;
+  border:2px #CCC solid;
+  border-radius: 10px;
+  width:80%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
