@@ -44,7 +44,7 @@
 	$query = "INSERT INTO `jokes`
 						(`joke`, `postedBy`, `rating`, `numVotes`, `timeStamp`)
 						VALUES
-						(?, ?, 0, 0, now())"
+						(?, ?, 0, 0, now())";
 
 	if( !$stmt->prepare($query) ) {
 		print "<script type=\"text/javascript\">
