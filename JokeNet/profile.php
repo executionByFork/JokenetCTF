@@ -34,9 +34,9 @@
     </div>
     <div class="n-contact">
       <ul>
-        <li class="list fb">Email</li>
-        <li class="list dribble">X jokes posted</li>
-        <li class="list twitter">View Jokes</li>
+        <li class="email"><b>Email</b></li>
+        <li class="num"><b>X jokes posted</b></li>
+        <li class="jokes"><b><a href="">View Jokes</a></b></li>
       </ul>
     </div>
   </div>

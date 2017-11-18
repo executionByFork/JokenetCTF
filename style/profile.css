@@ -47,11 +47,6 @@ body{
 }
 .n-contact{margin:0;width:260px;}
 
-li.dribble {
-  border-left:3px solid #d97aa5;
-}
-li.fb{border-left:3px solid #3B5998; }
-li.github{border-left:3px solid #f8bc2e; }
-li.twitter{border-left:3px solid #45b0e3; }
-
-li.twitter:hover{background: #45b0e3; height:31px;}
+li.email{border-left:3px solid #3B5998; }
+li.num{border-left:3px solid #f8bc2e; }
+li.jokes{border-left:3px solid #45b0e3; }
