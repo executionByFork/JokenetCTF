@@ -54,4 +54,4 @@ li.fb{border-left:3px solid #3B5998; }
 li.github{border-left:3px solid #f8bc2e; }
 li.twitter{border-left:3px solid #45b0e3; }
 
-li.twitter a:hover{background: #45b0e3; height:31px;}
+li.twitter:hover{background: #45b0e3; height:31px;}
