@@ -11,6 +11,7 @@
 
   if (!$_COOKIE["logged"]) {
     header("Location: /login.php");
+    die();
   }
 ?>
 
