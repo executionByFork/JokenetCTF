@@ -21,7 +21,7 @@
 		include "../functions.php";
 
 		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT * FROM `jokes` ORDER BY `rating` DESC LIMIT 10") ) {
+		if( !$stmt->prepare("SELECT * FROM `jokes` ORDER BY `rating` DESC LIMIT 15") ) {
 	    print "<script type=\"text/javascript\">
 	             alert(\"Error preparing statment\");
 	           </script>";
