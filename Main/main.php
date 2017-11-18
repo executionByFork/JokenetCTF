@@ -40,7 +40,7 @@
 	<div id="main">
 		<h2>Start Hunting</h2>
 		<form action="/JokeNet/index.php" method="POST">
-			<input name="rules" type="submit" value="RULES" />
+			<input name="rules" type="submit" value="READ ME!" />
 			<input name="jokenetBtn" type="submit" value="Go To JokeNet" />
 		</form>
 	</div>
