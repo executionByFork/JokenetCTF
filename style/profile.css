@@ -13,7 +13,7 @@ body{
 }
 .n-profile-bar .name{
   width:260px;
-  
+  padding-bottom: 10px;
   border-bottom:1px solid #ebebeb;
 }
 .n-profile-bar .name h3{
@@ -33,7 +33,7 @@ body{
   height:30px;
   width:248px;
   display:block;
-  padding:12px 0 0 9px;
+  padding:20px 0 0 10px;
   border-bottom:1px solid #ebebeb;
 }
 
