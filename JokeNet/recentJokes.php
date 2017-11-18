@@ -26,7 +26,6 @@
 <body>
 
 	<?php
-		include "../mysql.php";
 		$highlightButton = 2;
 		include "navbar.php";
 	?>
@@ -35,6 +34,7 @@
 
 	<?php
 
+		include "../mysql.php";
 		include "../functions.php";
 
 		$stmt = $conn->stmt_init();

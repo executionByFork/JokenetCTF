@@ -26,19 +26,79 @@
   <?php
     $highlightButton = 4;
     include "navbar.php";
+
+    $user = (array_key_exists('user', $_GET) && is_string($_GET['user']))
+                  ? $_GET['user'] : '';
+    /*
+    if (empty($user)) {
+      print "<script type=\"text/javascript\">
+               alert(\"You didn't fill out the form!\");
+             </script>";
+      die();
+    }*/
+
+    include "../mysql.php";
+
+    //get user info
+    $stmt = $conn->stmt_init();
+    if( !$stmt->prepare("SELECT `jokerName`, `email` FROM `jokers` WHERE `jokerName` = ?") ) {
+      print "<script type=\"text/javascript\">
+               alert(\"Error preparing statment\");
+             </script>";
+      die();
+    }
+    $stmt->bind_param("s", $user);
+
+    if (!$stmt->execute()) {
+      print "<script type=\"text/javascript\">
+               alert(\"Error executing statement\");
+             </script>";
+      die();
+    }
+    $stmt->bind_result($jokerName, $email);
+
+    //get jokes by user
+    if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
+      print "<script type=\"text/javascript\">
+               alert(\"Error preparing statment\");
+             </script>";
+      die();
+    }
+    $stmt->bind_param("s", $username);
+
+    if (!$stmt->execute()){
+      print "<script type=\"text/javascript\">
+               alert(\"Error executing statement\");
+             </script>";
+      die();
+    }
+    $stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
+
+    $stmt->store_result();
+
+    $stmt->num_rows
   ?>
 
   <div class="n-profile-bar">
     <div class="name">
-      <h3>Username</h3>
+      <h3><?php echo $jokerName; ?></h3>
     </div>
     <div class="n-contact">
       <ul>
-        <li class="email"><b>Email</b></li>
-        <li class="num"><b>X jokes posted</b></li>
-        <li class="jokes"><b><a href="">View Jokes</a></b></li>
+        <li class="email"><b><?php echo $email; ?></b></li>
+        <li class="num"><b><?php echo $stmt->num_rows; ?> jokes posted</b></li>
       </ul>
     </div>
   </div>
+
+  <?php
+
+    include "../functions.php";
+
+    while($stmt->fetch()) {
+      printJoke($jokeID, $jokeText, $postedBy, $rating, $timeStamp);
+    }
+
+  ?>
 </body>
 </html>
