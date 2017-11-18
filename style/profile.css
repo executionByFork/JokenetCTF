@@ -1,5 +1,5 @@
 body{
-  background:#CCC url(http://estudio87.com/img/back.jpg)no-repeat center center fixed;
+  background:#CCC;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .n-profile-bar{
@@ -23,7 +23,7 @@ body{
   width:160px;
   text-align:left;
 }
-
+/*
 .n-profile-bar .name p{
   font-size:11px;
   color:#c1c1c1;
@@ -77,7 +77,7 @@ body{
 
 .job p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
 .my p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
-
+*/
 
 ul li{
   list-style-type: none;
