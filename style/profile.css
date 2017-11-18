@@ -26,11 +26,15 @@ body{
 
 .n-contact ul li{
   list-style-type: none;
-  width:260px; 
   margin:0px;
   float:left;
   color:#2D303C;
-  height:43px;
+
+  height:30px;
+  width:248px;
+  display:block;
+  padding:12px 0 0 9px;
+  border-bottom:1px solid #ebebeb;
 }
 
 .n-contact ul{
@@ -41,15 +45,6 @@ body{
   border-radius:4px;
 }
 .n-contact{margin:0;width:260px;}
-
-.n-contact ul li {
-  height:30px;
-  width:248px;
-  display:block;
- padding:12px 0 0 9px;
- border-bottom:1px solid #ebebeb;
-  
-}
 
 li.dribble{border-left:3px solid #d97aa5;
   background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px transparent !important}
