@@ -39,11 +39,24 @@
 	<!-- Link to JokeNet -->
 	<div id="main">
 		<h2>Start Hunting</h2>
-		<form action="/JokeNet/index.php" method="POST">
+		<form action="" method="POST">
 			<input name="rules" type="submit" value="READ ME!" />
 			<input name="jokenetBtn" type="submit" value="Go To JokeNet" />
 		</form>
 	</div>
+
+	<?php
+
+		if ( isset($_POST['rules']) ) {
+			header("Location: /Main/rules.php");
+			die();
+		}
+		if ( isset($_POST['jokenetBtn']) ) {
+			header("Location: /JokeNet/index.php");
+			die();
+		}
+
+	?>
 
 	<!-- Flag Submission -->
 	<div id="main">
@@ -71,6 +84,7 @@
 </html>
 
 <?php
+	//php for flag submission
 	if ( !isset($_POST['flag']) ) {
 		die();
 	}
