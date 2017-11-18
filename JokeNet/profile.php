@@ -3,6 +3,7 @@
 <head>
   <title>Profile</title>
   <link rel="stylesheet" type="text/css" href="/style/profile.css" />
+  <link rel="stylesheet" href="/style/navbar.css" />
 </head>
 <body>
   <?php
