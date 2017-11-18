@@ -13,7 +13,6 @@ body{
 }
 .n-profile-bar .name{
   width:260px;
-  
   border-bottom:1px solid #ebebeb;
 }
 .n-profile-bar .name h3{
@@ -31,7 +30,7 @@ body{
   width:260px;
   text-align:center;
 }
-
+/*
 .n-profile-bar .about{
   width:260px;
   height:100px;
@@ -70,14 +69,30 @@ body{
   
 }
 
-.job p{text-align:center;margin:0;
-  font-weight:bold;color:#a7a7a7;}
-.my p{color:#a7a7a7;text-align:center;margin:0;
-  font-weight:bold;}
+.job p{
+  text-align:center;margin:0;
+  font-weight:bold;color:#a7a7a7;
+}
+.my p{
+  color:#a7a7a7;
+  text-align:center;
+  margin:0;
+  font-weight:bold;
+}
 
-.job p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
-.my p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
-
+.job p.link{
+  text-align:center;
+  margin:0;
+  font-weight:bold;
+  color:#fa8b49;
+}
+.my p.link{
+  text-align:center;
+  margin:0;
+  font-weight:bold;
+  color:#fa8b49;
+}
+*/
 
 .n-contact ul li{
   list-style-type: none;
@@ -95,15 +110,19 @@ body{
   padding:0px 0 0 0px;
   border-radius:4px;
 }
-.n-contact{margin:0;width:260px;}
-.n-contact a{color:#a5a3a3;}
+.n-contact{
+  margin:0;width:260px;
+}
+.n-contact a{
+  color:#a5a3a3;
+}
 
 .n-contact ul li a{
   height:30px;
   width:248px;
   display:block;
- padding:12px 0 0 9px;
- border-bottom:1px solid #ebebeb;
+  padding:12px 0 0 9px;
+  border-bottom:1px solid #ebebeb;
   
 }
 .n-contact ul li a:link {
@@ -116,13 +135,28 @@ body{
   width:248px;
 }
 
-.n-contact li.dribble{border-left:3px solid #d97aa5;
-  background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px transparent !important}
-.n-contact li.fb{border-left:3px solid #3B5998; background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px 8px transparent !important}
-.n-contact li.github{border-left:3px solid #f8bc2e;background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -95px transparent !important}
-.n-contact li.twitter{border-left:3px solid #45b0e3;background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -60px transparent !important}
+.n-contact li .dribble {
+  border-left:3px solid #d97aa5;
+  background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px transparent !important;
+}
+.n-contact li .fb {
+  border-left:3px solid #3B5998;
+  background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px 8px transparent !important;
+}
+.n-contact li .twitter {
+  border-left:3px solid #45b0e3;
+  background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -60px transparent !important;
+}
 
-.n-contact li.dribble a:hover{background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px  #d97aa5 !important;height:32px;}
-.n-contact li.fb a:hover{background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px 8px   #3B5998 !important;height:31px;}
-.n-contact li.github a:hover{background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -95px #f8bc2e !important;height:31px;}
-.n-contact li.twitter a:hover{background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -60px #45b0e3 !important;height:31px;}
+.n-contact li .dribble a:hover {
+  background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px  #d97aa5 !important;
+  height:32px;
+}
+.n-contact li .fb a:hover {
+  background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px 8px   #3B5998 !important;
+  height:31px;
+}
+.n-contact li .twitter a:hover {
+  background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -60px #45b0e3 !important;
+  height:31px;
+}
