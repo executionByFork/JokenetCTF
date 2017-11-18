@@ -4,7 +4,7 @@ body{
 }
 .n-profile-bar{
   width:260px;
-  height:230px;
+  height:190px;
   background:#FFF;
   padding:5px 0 0px 0;
   border-radius:3px;
@@ -53,3 +53,5 @@ li.dribble {
 li.fb{border-left:3px solid #3B5998; }
 li.github{border-left:3px solid #f8bc2e; }
 li.twitter{border-left:3px solid #45b0e3; }
+
+li.twitter a:hover{background: #45b0e3; height:31px;}
