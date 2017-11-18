@@ -48,9 +48,9 @@
     
     <div class="n-contact">
       <ul>
-        <li class="fb">Email</li>
-        <li class="dribble">X jokes posted</li>
-        <li class="twitter">View Jokes</li>
+        <li class="list fb">Email</li>
+        <li class="list dribble">X jokes posted</li>
+        <li class="list twitter">View Jokes</li>
       </ul>
     </div>
   </div>
