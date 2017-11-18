@@ -1,0 +1,128 @@
+body{
+ background:#2d3b36 url(http://estudio87.com/img/back.jpg)no-repeat center center fixed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.n-profile-bar{
+  width:260px;
+  height:323px;
+  background:#FFF;
+  padding:5px 0 0px 0;
+  border-radius:3px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+  margin:100px auto;
+}
+.n-profile-bar .name{
+  width:260px;
+  
+  border-bottom:1px solid #ebebeb;
+}
+.n-profile-bar .name h3{
+  font-size:16px;
+  color:#616161;
+  margin:10px 0 0px 90px;
+  width:160px;
+  text-align:left;
+}
+
+.n-profile-bar .name p{
+  font-size:11px;
+  color:#c1c1c1;
+  margin:0px 0 5px 0px;
+  width:260px;
+  text-align:center;
+}
+
+.n-profile-bar .about{
+  width:260px;
+  height:100px;
+  border-bottom:1px solid #ebebeb;
+  font-size:11px;
+  color:#616161;
+}
+
+.n-profile-bar .about .my{
+  width:129px;
+  height:100px;
+  border-bottom:1px solid #ebebeb;
+  border-right:1px solid #ebebeb;
+  float:left;
+}
+.n-profile-bar .about .my img{
+  float:left;
+  height:50px;
+  width:50px;
+  border-radius:50px;
+  margin:5px 25px 10px 40px;
+}
+.n-profile-bar .about .job{
+  width:130px;
+  height:100px;
+  border-bottom:1px solid #ebebeb;
+  float:right;
+}
+
+.n-profile-bar .about .job img{
+  float:left;
+  height:50px;
+  width:50px;
+  border-radius:50px;
+  margin:5px 25px 10px 45px;
+  
+}
+
+.job p{text-align:center;margin:0;
+  font-weight:bold;color:#a7a7a7;}
+.my p{color:#a7a7a7;text-align:center;margin:0;
+  font-weight:bold;}
+
+.job p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
+.my p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
+
+
+ul li{
+  list-style-type: none;
+  width:260px; 
+  margin:0px;
+  float:left;
+  color:#2D303C;
+  height:43px;
+}
+
+ul{
+  margin:0;
+  width:260px;
+  font-size:13px;
+  padding:0px 0 0 0px;
+  border-radius:4px;
+}
+.n-contact{margin:0;width:260px;}
+a{color:#a5a3a3;}
+
+.n-contact ul li a{
+  height:30px;
+  width:248px;
+  display:block;
+ padding:12px 0 0 9px;
+ border-bottom:1px solid #ebebeb;
+  
+}
+.n-contact ul li a:link {
+  text-decoration: none;
+}
+.n-contact ul li a:hover {
+  text-decoration: none;
+ 
+  color:#fff;
+  width:248px;
+}
+
+li.dribble{border-left:3px solid #d97aa5;
+  background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px transparent !important}
+li.fb{border-left:3px solid #3B5998; background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px 8px transparent !important}
+li.github{border-left:3px solid #f8bc2e;background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -95px transparent !important}
+li.twitter{border-left:3px solid #45b0e3;background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -60px transparent !important}
+
+li.dribble a:hover{background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -25px  #d97aa5 !important;height:32px;}
+li.fb a:hover{background: url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px 8px   #3B5998 !important;height:31px;}
+li.github a:hover{background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -95px #f8bc2e !important;height:31px;}
+li.twitter a:hover{background:url("http://s4.postimage.org/wos3dh0t5/social_icons.png") no-repeat 190px -60px #45b0e3 !important;height:31px;}
