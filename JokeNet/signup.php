@@ -36,9 +36,9 @@
 
 
 <?php
-if ( !isset($_POST['create']) ) {
-	die();
-}
+	if ( !isset($_POST['create']) ) {
+		die();
+	}
 
 	$username = (array_key_exists('username', $_POST) && is_string($_POST['username']))
 											? $_POST['username'] : '';
