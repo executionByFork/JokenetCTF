@@ -49,6 +49,7 @@
             VALUES
             (?, ?, 0, 0, now())";
 
+	$stmt = $conn->stmt_init();
 	if( !$stmt->prepare($query) ) {
 		print "<script type=\"text/javascript\">
              alert(\"Problem preparing SQL statement\");
@@ -63,4 +64,9 @@
            </script>";
 		die();
 	}
+
+	print "<script type=\"text/javascript\">
+           alert(\"Joke Posted!\");
+           window.location.replace(\"topJokes.php\");
+         </script>";
 ?>
