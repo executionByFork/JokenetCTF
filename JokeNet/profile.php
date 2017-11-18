@@ -10,6 +10,12 @@
     <h3>Ahmet Tek</h3>
     <p> Analyst Web Developer </p>
   </div>
+
+  <?php
+    $highlightButton = 4;
+    include "navbar.php";
+  ?>
+
   <div class="about">
     <div class="my">
       <img src="http://profile.ak.fbcdn.net/hprofile-ak-prn1/c50.50.629.629/s160x160/72119_100897860077123_541454148_n.jpg" />
