@@ -41,24 +41,14 @@ body{
   border-radius:4px;
 }
 .n-contact{margin:0;width:260px;}
-a{color:#a5a3a3;}
 
-.n-contact ul li a{
+.n-contact ul li {
   height:30px;
   width:248px;
   display:block;
  padding:12px 0 0 9px;
  border-bottom:1px solid #ebebeb;
   
-}
-.n-contact ul li a:link {
-  text-decoration: none;
-}
-.n-contact ul li a:hover {
-  text-decoration: none;
- 
-  color:#fff;
-  width:248px;
 }
 
 li.dribble{border-left:3px solid #d97aa5;
