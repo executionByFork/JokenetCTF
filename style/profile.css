@@ -23,63 +23,8 @@ body{
   width:160px;
   text-align:left;
 }
-/*
-.n-profile-bar .name p{
-  font-size:11px;
-  color:#c1c1c1;
-  margin:0px 0 5px 0px;
-  width:260px;
-  text-align:center;
-}
 
-.n-profile-bar .about{
-  width:260px;
-  height:100px;
-  border-bottom:1px solid #ebebeb;
-  font-size:11px;
-  color:#616161;
-}
-
-.n-profile-bar .about .my{
-  width:129px;
-  height:100px;
-  border-bottom:1px solid #ebebeb;
-  border-right:1px solid #ebebeb;
-  float:left;
-}
-.n-profile-bar .about .my img{
-  float:left;
-  height:50px;
-  width:50px;
-  border-radius:50px;
-  margin:5px 25px 10px 40px;
-}
-.n-profile-bar .about .job{
-  width:130px;
-  height:100px;
-  border-bottom:1px solid #ebebeb;
-  float:right;
-}
-
-.n-profile-bar .about .job img{
-  float:left;
-  height:50px;
-  width:50px;
-  border-radius:50px;
-  margin:5px 25px 10px 45px;
-  
-}
-
-.job p{text-align:center;margin:0;
-  font-weight:bold;color:#a7a7a7;}
-.my p{color:#a7a7a7;text-align:center;margin:0;
-  font-weight:bold;}
-
-.job p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
-.my p.link{text-align:center;margin:0;font-weight:bold;color:#fa8b49;}
-*/
-
-ul li{
+.n-contact ul li{
   list-style-type: none;
   width:260px; 
   margin:0px;
@@ -88,7 +33,7 @@ ul li{
   height:43px;
 }
 
-ul{
+.n-contact ul{
   margin:0;
   width:260px;
   font-size:13px;
