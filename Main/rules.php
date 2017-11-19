@@ -36,7 +36,9 @@
 			<h1>&lt; RULES and INFO &gt;</h1>
 
 			Welcome to the JokeNet CTF Challenge! <br />
-			So, you've created a CTF account, what now? You need to find flags! <br />
+			So, you've created a CTF account, what now? <br />
+			You need to find flags! <br />
+			<br />
 			Currently, you are in the CTF portion of the site. This serves as the main hub for this challenge, and the home page is where you'll go to submit the flag codes you find, view the leaderboards, and unlock hints. <br />
 			<br />
 			The mock site I've created for you guys to hack is located in the JokeNet/ folder. The site looks bad, because it's security is a joke (<i>puns!</i>), but it's also because I didn't want to spend even more time formatting it and keeping you all waiting. <br />
@@ -45,7 +47,7 @@
 			<br />
 			The rules are simple, hack this site in any way you can imagine to retirieve hidden flags <br />
 			A flag code will look something like this: FLAG-XXXXXXXXXXXXXXXXXXXXXXXX <br />
-			Flags can be found in any order, though sometimes you may need to 'chain vulnerabilities', and by this I mean certain flags are only accessable by using another flag's vulnerability.
+			Flags can be found in any order, though sometimes you may need to 'chain vulnerabilities', and by this I mean certain flags are only accessable by using another flag's vulnerability. <br />
 			If you find one of these flag codes, submit the code on the home page for points! <br />
 			<br />
 			<h3>The point System</h3>
