@@ -55,7 +55,7 @@
 	           </script>";
 	    die();
 		}
-		$likeVar = "%" . $searchKey . "%";
+		$likeVar = "%" . $searchkey . "%";
 		$stmt->bind_param("s", $likeVar);
 
 		if (!$stmt->execute()){
@@ -74,7 +74,7 @@
 
 		while($stmt->fetch()) {
 			print '
-				<b>Posted by: <a href="profile.php?user=' . $jokerName . '">' . $jokerName . '</a></b><br />
+				<b><a href="profile.php?user=' . $jokerName . '">' . $jokerName . '</a></b><br />
 			';
 		}
 
