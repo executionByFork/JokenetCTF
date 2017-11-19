@@ -29,8 +29,8 @@
 	<br />
 	<br />
 	<br />
-	<div id="rules">
-		<center>
+	<center>
+		<div id="rules">
 			<h1 id='lg'><b>The Rules</b></h1>
 		<br />
 			<h1>&lt; RULES and INFO &gt;</h1>
@@ -55,7 +55,7 @@
 
 			That's about it. Thanks for reading and get hunting!
 	    <br />
-		</center>
-	</div>
+		</div>
+	</center>
 </body>
 </html>
