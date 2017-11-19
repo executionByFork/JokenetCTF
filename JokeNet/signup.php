@@ -22,6 +22,7 @@
 <center><h3>Sign Up for JokeNet!</h3></center>
 <form action="" method="POST" class="jokeNetCreate">
   <input type="text" placeholder="Username" name="username">
+  <input type="text" placeholder="Email" name="email">
   <input type="password" placeholder="Password" name="password">
   <input type="password" placeholder="Re-enter Password" name="passCheck">
   <input type="submit" name="create" value="Create User">
@@ -77,7 +78,7 @@
 		die();
 	}
 
-	if( !$stmt->prepare("INSERT INTO `jokers` (jokerName, jokerHash, numJokes) VALUES (?, ?, 0)") ) {
+	if( !$stmt->prepare("INSERT INTO `jokers` (jokerName, jokerHash, email) VALUES (?, ?, ?)") ) {
 	    print "<script type=\"text/javascript\">
 	             alert(\"Error preparing statment\");
 	           </script>";
