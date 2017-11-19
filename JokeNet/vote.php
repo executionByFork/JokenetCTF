@@ -1,5 +1,10 @@
 <?php
 
+	if(!defined('AUTH')) {
+    header("Location: /JokeNet/index.php");
+		die();
+	}
+	
 	if ( !isset($_POST['vote']) ) {
 		die();
 	}
