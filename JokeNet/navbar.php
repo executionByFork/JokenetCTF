@@ -39,6 +39,7 @@ echo '
 			<a href="/JokeNet/logout.php"><button id="logout"><b>Logout</b></button></a>
 		</div>
 	</nav>
+	<br />
 ';
 
 ?>

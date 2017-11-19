@@ -29,8 +29,6 @@
 		$highlightButton = 2;
 		include "navbar.php";
 	?>
-	<br />
-	<br />
 
 	<?php
 

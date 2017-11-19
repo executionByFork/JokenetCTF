@@ -30,8 +30,6 @@
 		$highlightButton = 1;
 		include "navbar.php";
 	?>
-	<br />
-	<br />
 
 	<?php
 

@@ -30,8 +30,6 @@
     include "navbar.php";
 	?>
 	<center>
-		<br />
-		<br />
 
 		<form action="" method="POST">
 		  <input type="text" name="searchkey">

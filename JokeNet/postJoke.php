@@ -30,8 +30,6 @@
 		$highlightButton = 3;
 		include "navbar.php";
 	?>
-	<br />
-	<br />
 
 	<div class="submitJoke">
 		<form action="" method="POST">
