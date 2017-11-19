@@ -14,6 +14,9 @@ switch ($highlightButton) {
 		$profile = ' class="active" ';
 		break;
 	case 5:
+		$search = ' class="active" ';
+		break;
+	case 6:
 		$about = ' class="active" ';
 		break;
 	default:
@@ -29,6 +32,7 @@ echo '
 			<li'. $recent . '><a href="recentJokes.php">Recent Jokes</a></li>
 			<li'. $post . '><a href="postJoke.php">Post a Joke</a></li>
 			<li'. $profile . '><a href="profile.php">Profile</a></li>
+			<li'. $search . '><a href="search.php">Search</a></li>
 			<li'. $about . '><a href="about.php">About</a></li>
 		</ul>
 		<div id="topRight">
