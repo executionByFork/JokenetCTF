@@ -32,9 +32,7 @@
                   ? $_GET['user'] : '';
     
     if (empty($user)) {
-      print "<script type=\"text/javascript\">
-               alert(\"User is empty!\");
-             </script>";
+      header("Location: profile.php?user=" . $_COOKIE['username']);
       die();
     }
 
