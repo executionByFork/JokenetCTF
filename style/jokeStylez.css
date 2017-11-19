@@ -7,7 +7,7 @@ body{
   height:110px;
   width:190px;
   margin:auto;
-  border:1px #CCC solid;
+  border:1px #808080 solid;
   padding:10px;
 }
 
@@ -20,7 +20,7 @@ body{
   height:200px;
   width:190px;
   margin:auto;
-  border:1px #CCC solid;
+  border:1px #808080 solid;
   padding:10px;
 }
 
@@ -38,7 +38,7 @@ body{
 .jokePost {
   margin:auto;
   margin-bottom: 10px;
-  border:2px #CCC solid;
+  border:2px #808080 solid;
   border-radius: 10px;
   width:80%;
   padding-top: 5px;
@@ -58,7 +58,7 @@ body{
 textarea {
   margin:auto;
   margin-bottom: 10px;
-  border:2px #CCC solid;
+  border:2px #808080 solid;
   width:80%;
   height: 150px;
   padding-top: 5px;
