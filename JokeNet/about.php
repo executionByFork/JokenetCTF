@@ -30,6 +30,8 @@
     include "navbar.php";
 	?>
 	<center>
+		<br />
+		<br />
 		JokeNet Info
 	</center>
 </body>
