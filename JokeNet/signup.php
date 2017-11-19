@@ -5,8 +5,8 @@
 	if (!$_SESSION['logged']) {
 		$_SESSION['error'] = 1;
 		$_SESSION['msg'] = "You must be logged in to visit that page!";
-		//header("Location: /Main/authenticate.php");
-		//die();
+		header("Location: /Main/authenticate.php");
+		die();
 	}
 
 ?>
@@ -15,7 +15,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
-<title>Create User</title>
+<title>Sign Up - JokeNet</title>
 </head>
 <body>
 

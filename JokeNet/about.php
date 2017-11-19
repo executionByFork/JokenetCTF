@@ -5,8 +5,8 @@
   if (!$_SESSION['logged']) {
     $_SESSION['error'] = 1;
     $_SESSION['msg'] = "You must be logged in to visit that page!";
-    //header("Location: /Main/authenticate.php");
-    //die();
+    header("Location: /Main/authenticate.php");
+    die();
   }
 
   if (!$_COOKIE["logged"]) {
@@ -30,7 +30,9 @@
     include "navbar.php";
 	?>
 	<center>
-		JokeNet Info
+		Words from JokeNet creator:
+		"One day, I bored. I wanted to laugh. So I wrote this website."
+		--John Doe
 	</center>
 </body>
 </html>

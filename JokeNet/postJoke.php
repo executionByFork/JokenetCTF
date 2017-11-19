@@ -21,7 +21,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
 	<link rel="stylesheet" href="/style/navbar.css" />
-	<title>Top Jokes - JokeNet</title>
+	<title>Post a Joke - JokeNet</title>
 </head>
 <body>
 
