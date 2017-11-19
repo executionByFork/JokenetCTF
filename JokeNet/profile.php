@@ -54,6 +54,7 @@
       die();
     }
     $stmt->bind_result($jokerName, $email);
+    $stmt->store_result();
     if ( !$stmt->num_rows ) {
       print "<center><h1>User profile not found</h1></center>";
       die();
