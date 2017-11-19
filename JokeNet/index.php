@@ -10,9 +10,9 @@
 	}
 
 	if (!$_COOKIE["logged"]) {
-    header("Location: /JokeNet/topJokes.php");
+    header("Location: /JokeNet/login.php");
   } else {
-		header("Location: /JokeNet/login.php");
+		header("Location: /JokeNet/topJokes.php");
 	}
 
 ?>
