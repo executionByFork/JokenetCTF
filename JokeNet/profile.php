@@ -64,7 +64,7 @@
              </script>";
       die();
     }
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param("s", $user);
 
     if (!$stmt->execute()){
       print "<script type=\"text/javascript\">
