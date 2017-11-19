@@ -39,12 +39,13 @@
 			<br />
 			Currently, you are in the CTF portion of the site. This serves as the main hub for this challenge, and the home page is where you'll go to submit the flag codes you find, view the leaderboards, and unlock hints. <br />
 			<br />
-			The mock site I've created for you guys to hack is located in the JokeNet/ folder. The site looks bad, because it's security is a joke (<i>puns!</i>), but it's also because I didn't want to spend even more time formatting it and keeping you all waiting. <br />
+			The mock site I've created for you guys to hack is located in the JokeNet/ folder. <br />
+			The site looks bad, because it's security is a joke (<i>puns!</i>) <br />
 			<br />
-			There are many security holes for you exploit, and under each of them lies a flag. Manipulate, inject, cheat and break the site in any way you can to find them. Flag difficulty ranges from easy to hard, so hopefully this CTF challenge will teach everyone something new, and make you think in ways you hadn't. <br />
+			There are many security holes for you exploit, and under each of them lies a flag. Manipulate, inject, cheat and break the site in any way you can to find them. Flag difficulty varies from easy to hard, so hopefully this CTF challenge will teach everyone something new, and make you think in ways you hadn't. <br />
 			<br />
 			The rules are simple, hack this site in any way you can imagine to retirieve hidden flags <br />
-			A flag code will look something like this: FLAG-XXXXXXXXXXXXXXXXXXXXXXXX <br />
+			A flag code will look something like this: <b>FLAG-XXXXXXXXXXXXXXXXXXXXXXXX</b> <br />
 			Flags can be found in any order, though sometimes you may need to 'chain vulnerabilities', and by this I mean certain flags are only accessable by using another flag's vulnerability. <br />
 			If you find one of these flag codes, submit the code on the home page for points! <br />
 			<br />
