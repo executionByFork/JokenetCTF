@@ -165,3 +165,7 @@ after { clear: both; }
 #lg {
   color: lightgrey;
 }
+
+#rules {
+  width: 80%;
+}
