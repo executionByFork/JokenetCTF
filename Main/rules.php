@@ -31,10 +31,8 @@
 	<br />
 	<center>
 		<div id="rules">
-			<h1 id='lg'><b>The Rules</b></h1>
+			<h1 id='lg'><b>&lt; RULES and INFO &gt;</b></h1>
 		<br />
-			<h1>&lt; RULES and INFO &gt;</h1>
-
 			Welcome to the JokeNet CTF Challenge! <br />
 			So, you've created a CTF account, what now? <br />
 			You need to find flags! <br />
