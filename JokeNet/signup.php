@@ -55,6 +55,12 @@
 	         </script>";
 	  die();
 	}
+	if ( !($password === $passCheck) ) {
+		print "<script type=\"text/javascript\">
+	           alert(\"Passwords dont match!\");
+	         </script>";
+		die();
+	}
 
 	include "../mysql.php";
 
