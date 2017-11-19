@@ -101,7 +101,7 @@
       printJoke($jokeID, $jokeText, $postedBy, $rating, $timeStamp);
     }
 
-    define("AUTH", 1)
+    define("AUTH", 1);
     include "vote.php";
 
   ?>
