@@ -74,6 +74,8 @@
     </div>
   </div>
 
+  <h1><center><?php echo $jokerName; ?>'s Jokes:</center></h1>
+
   <?php
     //get jokes by user
     if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
