@@ -6,8 +6,8 @@
 
 	$voteVal = (array_key_exists('voteVal', $_POST) && is_numeric($_POST['voteVal']))
 	                ? $_POST['voteVal'] : '';
-	$jokeID = (array_key_exists('jokeID', $_POST) && is_numeric($_POST['jokeID']))
-	                ? $_POST['jokeID'] : '';
+	$jokeID = (array_key_exists('jokeNumber', $_POST) && is_numeric($_POST['jokeNumber']))
+	                ? $_POST['jokeNumber'] : '';
 
 	include "../mysql.php";
 
