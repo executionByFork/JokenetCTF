@@ -49,7 +49,9 @@
 		include "../mysql.php";
 
 		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT `jokerName` FROM `jokers` WHERE `jokerName` LIKE ?") ) {
+		if( !$stmt->prepare("SELECT `jokerName` FROM `jokers`
+												 WHERE `jokerName` LIKE ?
+												 ORDER BY LOCATE(?, `jokerName`), `jokerName`") ) {
 	    print "<script type=\"text/javascript\">
 	             alert(\"Error preparing statment\");
 	           </script>";
