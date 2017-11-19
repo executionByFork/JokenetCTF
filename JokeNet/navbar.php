@@ -16,6 +16,9 @@ switch ($highlightButton) {
 	case 5:
 		$about = ' class="active" ';
 		break;
+	default:
+    header("Location: /JokeNet/index.php");
+		die();
 }
 
 echo '
