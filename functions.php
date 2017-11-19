@@ -27,7 +27,7 @@
 				<hr />
 				<center><pre>' . nl2br($jokeText) . '</pre></center>
 				<hr />
-				<form action="/JokeNet/vote.php" method="POST">
+				<form action="" method="POST">
 					<select name="voteVal">
 					  <option value="0" selected>0</option>
 					  <option value="1">1</option>
