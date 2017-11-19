@@ -47,7 +47,9 @@
 											? $_POST['password'] : '';
 	$passCheck = (array_key_exists('passCheck', $_POST) && is_string($_POST['passCheck']))
 											? $_POST['passCheck'] : '';
-	if (empty($username) || empty($password) || empty($passCheck)) {
+	$email = (array_key_exists('email', $_POST) && is_string($_POST['email']))
+											? $_POST['email'] : '';
+	if (empty($username) || empty($password) || empty($passCheck) || empty($email)) {
 		print "<script type=\"text/javascript\">
 	           alert(\"You didn't fill out the form!\");
 	         </script>";
@@ -59,14 +61,14 @@
 	$stmt = $conn->stmt_init();
 	if( !$stmt->prepare("SELECT * FROM `jokers` WHERE `jokerName` = ?") ) {
 		print "<script type=\"text/javascript\">
-		         alert(\"Error preparing statement\");
+		         alert(\"Error preparing statement 1\");
 		       </script>";
 		die();
 	}
 	$stmt->bind_param("s", $username);
 	if (!$stmt->execute()){
 		print "<script type=\"text/javascript\">
-		         alert(\"Error executing statement\");
+		         alert(\"Error executing statement 1\");
 		       </script>";
 		die();
 	}
@@ -78,18 +80,18 @@
 		die();
 	}
 
-	if( !$stmt->prepare("INSERT INTO `jokers` (jokerName, jokerHash, email) VALUES (?, ?, ?)") ) {
+	if( !$stmt->prepare("INSERT INTO `jokers` (`jokerName`, `jokerHash`, `email`) VALUES (?, ?, ?)") ) {
 	    print "<script type=\"text/javascript\">
-	             alert(\"Error preparing statment\");
+	             alert(\"Error preparing statment 2\");
 	           </script>";
 	    die();
 	}
 
 	$hash = md5($password);
-	$stmt->bind_param("ss", $username, $hash);
+	$stmt->bind_param("sss", $username, $hash, $email);
 	if (!$stmt->execute()){
 		print "<script type=\"text/javascript\">
-		         alert(\"Error executing statement\");
+		         alert(\"Error executing statement 2\");
 		       </script>";
 		die();
 	}
