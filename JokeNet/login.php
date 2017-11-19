@@ -9,6 +9,9 @@
 		die();
 	}
 
+	define("AUTH", 1);
+  include "startTimer.php";
+
 ?>
 <!DOCTYPE html>
 <html>

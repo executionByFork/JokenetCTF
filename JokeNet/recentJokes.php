@@ -9,6 +9,9 @@
 		die();
 	}
 
+	define("AUTH", 1);
+  include "startTimer.php";
+
 	if (!$_COOKIE["logged"]) {
 		header("Location: login.php");
     die();
@@ -53,7 +56,7 @@
 			printJoke($jokeID, $jokeText, $postedBy, $rating, $timeStamp);
 		}
 
-		define("AUTH", 1);
+		//AUTH defined above
     include "vote.php";
 
 	?>

@@ -55,7 +55,7 @@
 			<br />
 			One last thing to note is that there is also a timer associated with your CTF account. The moment you visit any page on JokeNet it will start, and won't stop until all flags have been found. Dont worry about this too much though, this only serves as a secondary scoring system to the point total. It's much more worthwhile to take the extra time to find the flags without hints than to rush through this challenge. <br />
 			<br />
-			<b><h3>P.S.</h3></b> <br />
+			<b><h3>P.S.</h3></b>
 			Please dont abuse the system and create multiple CTF accounts. Tracking users is not an easy task and there are always ways around it, so we're using the honor system here. Also, please do not post anything derogatory or offensive on JokeNet. Let's try to be adults. <br />
 	    <br />
 			That's about it. Thanks for reading and get hunting! <br />

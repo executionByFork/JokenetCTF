@@ -9,6 +9,9 @@
     die();
   }
 
+  define("AUTH", 1);
+  include "startTimer.php";
+
   if (!$_COOKIE["logged"]) {
     header("Location: login.php");
     die();
