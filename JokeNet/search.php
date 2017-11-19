@@ -75,7 +75,7 @@
 		while($stmt->fetch()) {
 			print '
 				<b>Posted by: <a href="profile.php?user=' . $jokerName . '">' . $jokerName . '</a></b><br />
-			'
+			';
 		}
 
 		?>
