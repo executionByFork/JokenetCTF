@@ -29,22 +29,22 @@
 
 	$stmt->bind_result($start);
 	$stmt->fetch();
-	if ($start) {
-		die();
+	if (!$start) {
+		if( !$stmt->prepare("UPDATE `users` SET `start` = now() WHERE username = ?") ) {
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Problem preparing SQL statement";
+			header("Location: /Main/main.php");
+			die();
+		}
+		$stmt->bind_param("s", $_SESSION['username']);
+		if (!$stmt->execute()) {
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error executing SQL statement";
+			header("Location: /Main/main.php");
+			die();
+		}
 	}
 
-	if( !$stmt->prepare("UPDATE `users` SET `start` = now() WHERE username = ?") ) {
-		$_SESSION['error'] = 1;
-		$_SESSION['msg'] = "Problem preparing SQL statement";
-		header("Location: /Main/main.php");
-		die();
-	}
-	$stmt->bind_param("s", $_SESSION['username']);
-	if (!$stmt->execute()) {
-		$_SESSION['error'] = 1;
-		$_SESSION['msg'] = "Error executing SQL statement";
-		header("Location: /Main/main.php");
-		die();
-	}
+	
 
 ?>
