@@ -59,7 +59,22 @@
       print "<center><h1>User profile not found</h1></center>";
       die();
     }
+    $stmt->fetch()
+  ?>
 
+  <div class="n-profile-bar">
+    <div class="name">
+      <h3><?php echo $jokerName; ?></h3>
+    </div>
+    <div class="n-contact">
+      <ul>
+        <li class="email"><b><?php echo $email; ?></b></li>
+        <li class="num"><b><?php echo $stmt->num_rows; ?> jokes posted</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <?php
     //get jokes by user
     if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
       print "<script type=\"text/javascript\">
@@ -77,21 +92,6 @@
     $stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
 
     $stmt->store_result();
-  ?>
-
-  <div class="n-profile-bar">
-    <div class="name">
-      <h3><?php echo $jokerName; ?></h3>
-    </div>
-    <div class="n-contact">
-      <ul>
-        <li class="email"><b><?php echo $email; ?></b></li>
-        <li class="num"><b><?php echo $stmt->num_rows; ?> jokes posted</b></li>
-      </ul>
-    </div>
-  </div>
-
-  <?php
 
     include "../functions.php";
 
