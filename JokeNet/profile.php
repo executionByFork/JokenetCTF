@@ -29,13 +29,13 @@
 
     $user = (array_key_exists('user', $_GET) && is_string($_GET['user']))
                   ? $_GET['user'] : '';
-    /*
+    
     if (empty($user)) {
       print "<script type=\"text/javascript\">
-               alert(\"You didn't fill out the form!\");
+               alert(\"User is empty!\");
              </script>";
       die();
-    }*/
+    }
 
     include "../mysql.php";
 
@@ -43,7 +43,7 @@
     $stmt = $conn->stmt_init();
     if( !$stmt->prepare("SELECT `jokerName`, `email` FROM `jokers` WHERE `jokerName` = ?") ) {
       print "<script type=\"text/javascript\">
-               alert(\"Error preparing statment\");
+               alert(\"Error preparing statment 1\");
              </script>";
       die();
     }
@@ -60,7 +60,7 @@
     //get jokes by user
     if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
       print "<script type=\"text/javascript\">
-               alert(\"Error preparing statment\");
+               alert(\"Error preparing statment 2\");
              </script>";
       die();
     }
@@ -76,7 +76,7 @@
 
     $stmt->store_result();
 
-    $stmt->num_rows
+    //$stmt->num_rows
   ?>
 
   <div class="n-profile-bar">
