@@ -58,7 +58,7 @@
 	    die();
 		}
 		$likeVar = "%" . $searchkey . "%";
-		$stmt->bind_param("s", $likeVar);
+		$stmt->bind_param("s", $likeVar, $searchKey);
 
 		if (!$stmt->execute()){
 			print "<script type=\"text/javascript\">
