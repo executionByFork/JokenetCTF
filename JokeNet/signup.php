@@ -10,6 +10,7 @@
 	}
 
 	define("AUTH", 1);
+	include "../mysql.php";
   include "startTimer.php";
 
 ?>
@@ -64,8 +65,6 @@
 	         </script>";
 		die();
 	}
-
-	include "../mysql.php";
 
 	$stmt = $conn->stmt_init();
 	if( !$stmt->prepare("SELECT * FROM `jokers` WHERE `jokerName` = ?") ) {

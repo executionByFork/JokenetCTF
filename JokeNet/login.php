@@ -10,6 +10,7 @@
 	}
 
 	define("AUTH", 1);
+	include "../mysql.php";
   include "startTimer.php";
 
 ?>
@@ -48,8 +49,6 @@
            </script>";
     die();
 	}
-
-	include "../mysql.php";
 
 	//prepare and bind
 	$stmt = $conn->stmt_init();

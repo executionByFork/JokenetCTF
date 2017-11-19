@@ -10,6 +10,7 @@
   }
 
   define("AUTH", 1);
+  include "../mysql.php";
   include "startTimer.php";
 
   if (!$_COOKIE["logged"]) {

@@ -10,6 +10,7 @@
 	}
 
 	define("AUTH", 1);
+	include "../mysql.php";
   include "startTimer.php";
 
 	if (!$_COOKIE["logged"]) {
@@ -29,7 +30,6 @@
 <body>
 
 	<?php
-		include "../mysql.php";
 		$highlightButton = 1;
 		include "navbar.php";
 	?>

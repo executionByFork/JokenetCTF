@@ -10,6 +10,7 @@
   }
 
   define("AUTH", 1);
+  include "../mysql.php";
   include "startTimer.php";
 
   if (!$_COOKIE["logged"]) {
@@ -38,8 +39,6 @@
       header("Location: profile.php?user=" . $_COOKIE['username']);
       die();
     }
-
-    include "../mysql.php";
 
     //get user info
     $stmt = $conn->stmt_init();

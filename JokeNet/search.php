@@ -10,6 +10,7 @@
   }
 
 	define("AUTH", 1);
+	include "../mysql.php";
   include "startTimer.php";
 
   if (!$_COOKIE["logged"]) {
@@ -55,8 +56,6 @@
          </script>";
     die();
 		}
-
-		include "../mysql.php";
 
 		$stmt = $conn->stmt_init();
 		if( !$stmt->prepare("SELECT `jokerName` FROM `jokers`

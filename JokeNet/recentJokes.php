@@ -10,6 +10,7 @@
 	}
 
 	define("AUTH", 1);
+	include "../mysql.php";
   include "startTimer.php";
 
 	if (!$_COOKIE["logged"]) {
@@ -35,7 +36,6 @@
 
 	<?php
 
-		include "../mysql.php";
 		include "../functions.php";
 
 		$stmt = $conn->stmt_init();
