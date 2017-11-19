@@ -39,7 +39,9 @@
 			So, you've created a CTF account, what now? You need to find flags! <br />
 			Currently, you are in the CTF portion of the site. This serves as the main hub for this challenge, and the home page is where you'll go to submit the flag codes you find, view the leaderboards, and unlock hints. <br />
 			<br />
-			The mock site I've created for you guys to hack is located in the JokeNet/ folder. The site looks shitty, because it is. It's security is a joke (<i>puns!</i>). There are many security holes for you exploit, and under each of them lies a flag. <br />
+			The mock site I've created for you guys to hack is located in the JokeNet/ folder. The site looks bad, because it's security is a joke (<i>puns!</i>), but it's also because I didn't want to spend even more time formatting it and keeping you all waiting. <br />
+			<br />
+			There are many security holes for you exploit, and under each of them lies a flag. Manipulate, inject, cheat and break the site in any way you can to find them. Flag difficulty ranges from easy to hard, so hopefully this CTF challenge will teach everyone something new, and make you think in ways you hadn't. <br />
 			<br />
 			The rules are simple, hack this site in any way you can imagine to retirieve hidden flags <br />
 			A flag code will look something like this: FLAG-XXXXXXXXXXXXXXXXXXXXXXXX <br />
@@ -48,11 +50,13 @@
 			<br />
 			<h3>The point System</h3>
 			Every flag you find is worth 10 points. <br />
-			If you are having trouble finding flags, visiting the hints page may help you. On this page, each flag has a clue and a hint. The clues are free, but quite vague, they are aimed to point your focus in a general direction. Hints, however, are much more specific, and so they come with a <b>cost</b>. If you unlock a hint for a flag, you can only earn half the points for submitting that flag, which means 10 points becomes 5. Once you submit a flag, the hint for it is revealed for those of you that are curious. <br />
+			If you are having trouble finding flags, visiting the hints page may help you. On this page, each flag has a clue and a hint. The clues are free, but quite vague, they are aimed to point your focus in a general direction. Hints, however, are much more specific, and so they come with a <b>cost</b>. If you unlock a hint for a flag, you can only earn half the points for submitting that flag, which means 10 points becomes 5. Also, once you submit a flag, the hint for it is revealed for those of you that are curious, and the button to buy that hint will no longer work. <br />
 			<br />
 			One last thing to note is that there is also a timer associated with your CTF account. The momement you visit any page on JokeNet it will start, and won't stop until all flags have been found. Dont worry about this too much though, this only serves as a secondary scoring system to the point total. It's much more worthwhile to take the extra time to find the flags without hints than to rush through this challenge. <br />
-			<br /> Please dont abuse the system and create multiple CTF accounts. 
-
+			<br />
+			PS: <br />
+			Please dont abuse the system and create multiple CTF accounts. Tracking users is not an easy task and there are always ways around it, so we're using the honor system here. Also, please do not post anything derogatory or offensive on JokeNet. Let's try to be adults. <br />
+	    <br />
 			That's about it. Thanks for reading and get hunting!
 	    <br />
 		</div>
