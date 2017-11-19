@@ -20,6 +20,7 @@
 <head>
   <title>Profile</title>
   <link rel="stylesheet" type="text/css" href="/style/profile.css" />
+  <link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
   <link rel="stylesheet" href="/style/navbar.css" />
 </head>
 <body>
@@ -48,7 +49,6 @@
       die();
     }
     $stmt->bind_param("s", $user);
-
     if (!$stmt->execute()) {
       print "<script type=\"text/javascript\">
                alert(\"Error executing statement\");
@@ -56,6 +56,10 @@
       die();
     }
     $stmt->bind_result($jokerName, $email);
+    if ( !$stmt->num_rows ) {
+      print "<center><h1>User profile not found</h1></center>";
+      die();
+    }
 
     //get jokes by user
     if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
@@ -65,7 +69,6 @@
       die();
     }
     $stmt->bind_param("s", $user);
-
     if (!$stmt->execute()){
       print "<script type=\"text/javascript\">
                alert(\"Error executing statement\");
@@ -75,8 +78,6 @@
     $stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
 
     $stmt->store_result();
-
-    //$stmt->num_rows
   ?>
 
   <div class="n-profile-bar">
