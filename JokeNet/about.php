@@ -30,8 +30,10 @@
     include "navbar.php";
 	?>
 	<center>
-		Words from JokeNet creator:
-		"One day, I bored. I wanted to laugh. So I wrote this website."
+		<br />
+		<br />
+		Words from JokeNet creator: <br />
+		"One day, I bored. I wanted to laugh. So I wrote this website." <br />
 		--John Doe
 	</center>
 </body>

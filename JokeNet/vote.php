@@ -62,6 +62,9 @@
 		die();
 	}
 
+	print "<script type=\"text/javascript\">
+		         alert(\"Thanks for Voting!\");
+		       </script>";
 	header('Location: '.$_SERVER['REQUEST_URI']);
 
 ?>
