@@ -133,10 +133,14 @@
 			<hr />
 			<br />
 			<h2>Clue 3:</h2>
-			<h3><i>Clue 3 here</i></h3>
+			<h3><i>Not even GOOGLE will find this one!</i></h3>
 			<input name="Hint3" type="submit" value="Unlock Hint 3" />
 			<?php
-				if($f3 || $h3) print "<i>Here is the Hint text</i>";
+				if($f3 || $h3) print "
+					<i>
+						Google (and many other sites) use bots called webcrawlers to crawl and index pages for their search engine. By convention, these bots check for a robots.txt file in the root folder of every site, to see if there are any folders/files they shouldn't index, by request of the site owner.
+					</i>
+				";
 			?>
 			<hr />
 			<br />
