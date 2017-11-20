@@ -57,35 +57,21 @@
     die();
 		}
 
-		$stmt = $conn->stmt_init();
-		if( !$stmt->prepare("SELECT `jokerName` FROM `jokers`
-												 WHERE `jokerName` LIKE ?
-												 ORDER BY LOCATE(?, `jokerName`), `jokerName`") ) {
+		$sql = "SELECT `jokerName` FROM `jokers` WHERE `jokerName` LIKE '%{$searchkey}%'"
+		if( !($result = $conn->query($sql)) ) {
 	    print "<script type=\"text/javascript\">
-	             alert(\"Error preparing statment\");
+	             alert(\"There was an error in the SQL syntax\");
 	           </script>";
 	    die();
 		}
-		$likeVar = "%" . $searchkey . "%";
-		$stmt->bind_param("ss", $likeVar, $searchkey);
 
-		if (!$stmt->execute()){
-			print "<script type=\"text/javascript\">
-			         alert(\"Error executing statement\");
-			       </script>";
-			die();
-		}
-		$stmt->store_result();
-
-		if (!$stmt->num_rows) {
+		if (!$result->num_rows) {
 	    print "<center><h1>No Users found</h1></center>";
       die();
 		}
-		$stmt->bind_result($jokerName);
-
-		while($stmt->fetch()) {
+		while($row = $result->fetch_object()) {
 			print '
-				<b><a href="profile.php?user=' . $jokerName . '">' . $jokerName . '</a></b><br />
+				<b><a href="profile.php?user=' . $row['jokerName'] . '">' . $row['jokerName'] . '</a></b><br />
 			';
 		}
 
