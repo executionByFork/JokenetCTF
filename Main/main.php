@@ -150,17 +150,25 @@
 			$query = "UPDATE `users` SET flag9=1 WHERE `username` = ?";
 			break;
 	}
-	if( !$stmt->prepare($query) ) {
-		$_SESSION['error'] = 1;
-		$_SESSION['msg'] = "Error preparing SQL statement";
+
+	if ($query) {
+		if( !$stmt->prepare($query) ) {
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error preparing SQL statement";
+			header("Location: /Main/main.php");
+			die();
+		}
+		$stmt->bind_param("s", $_SESSION['username']);
+		if (!$stmt->execute()){
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error executing SQL UPDATE statement";
+			header("Location: /Main/main.php");
+			die();
+		}
+
+		$_SESSION['notify'] = 1;
+		$_SESSION['msg'] = "Flag code VALID! Nice Job!";
 		header("Location: /Main/main.php");
-		die();
 	}
-	$stmt->bind_param("s", $_SESSION['username']);
-	if (!$stmt->execute()){
-		$_SESSION['error'] = 1;
-		$_SESSION['msg'] = "Error executing SQL UPDATE statement";
-		header("Location: /Main/main.php");
-		die();
-	}
+
 ?>
