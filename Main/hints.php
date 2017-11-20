@@ -103,7 +103,7 @@
 		<div id="rules">
 			**Note: There is at least one flag dealing with XSS vulnerabilities. Due to the amount of damage these attacks can cause, I can't actually allow the JavaScript to run, so everything is sanitized and I'm simply checking the input to classify it as XSS. Because of this, it might be a bit harder to recognize where JokeNet might be "vulnerable" to XSS, and my script will only pick up basic JS injection, so using obscure injection strings won't present you with a Flag.
 		</div>
-	<br />
+		<br />
 	</center>
 
 	<div id="main">

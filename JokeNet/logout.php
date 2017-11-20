@@ -1,4 +1,6 @@
 <?php
+
+  unset($_SESSION['JokeNetLogged']);
 	setcookie("logged", 0);
 	setcookie("username", "");
 

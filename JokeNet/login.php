@@ -85,6 +85,7 @@
 	}
 
   //Set user state to logged in
+  $_SESSION['JokeNetLogged'] = 1;
   setcookie("logged", 1);
   setcookie("username", $username);
   header("Location: topJokes.php");

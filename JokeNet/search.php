@@ -14,7 +14,7 @@
   include "startTimer.php";
 
   if (!$_COOKIE["logged"]) {
-    header("Location: login.php");
+    header("Location: logout.php");
     die();
   }
 

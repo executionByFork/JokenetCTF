@@ -10,7 +10,7 @@
 	}
 
 	if (!$_COOKIE["logged"]) {
-    header("Location: /JokeNet/login.php");
+    header("Location: /JokeNet/logout.php");
   } else {
 		header("Location: /JokeNet/topJokes.php");
 	}
