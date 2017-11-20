@@ -23,6 +23,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
 	<link rel="stylesheet" href="/style/navbar.css" />
+  <noscript><meta http-equiv="refresh" content="0;url=JSdisabled.php"></noscript>
 	<title>Recent Jokes - JokeNet</title>
 </head>
 <body>

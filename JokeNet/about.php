@@ -24,6 +24,7 @@
 	<title>About JokeNet</title>
   <link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
   <link rel="stylesheet" href="/style/navbar.css" />
+  <noscript><meta http-equiv="refresh" content="0;url=JSdisabled.php"></noscript>
 </head>
 <body>
 
@@ -38,5 +39,10 @@
 		"One day, I bored. I wanted to laugh. So I wrote this website." <br />
 		--John Doe
 	</center>
+
+  <!-- 
+    This is probably the easiest flag you're going to find
+    FLAG-HV8WHVUW7HF782HVBKJSH09US
+  -->
 </body>
 </html>

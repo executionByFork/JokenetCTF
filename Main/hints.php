@@ -173,10 +173,14 @@
 			<hr />
 			<br />
 			<h2>Clue 6:</h2>
-			<h3><i>Clue 6 here</i></h3>
+			<h3><i>If you're analyizing code, you should inspect it closely</i></h3>
 			<input name="Hint6" type="submit" value="Unlock Hint 6" />
 			<?php
-				if($f6 || $h6) print "<i>Here is the Hint text</i>";
+				if($f6 || $h6) print "
+					<i>
+						There's not a lot to this flag, literally just inspect the source code. You can right click and hit 'Inspect' if you want, but it might be easier if you choose the 'View Page Source' option.
+					</i>
+				";
 			?>
 			<hr />
 			<br />

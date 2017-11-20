@@ -24,6 +24,7 @@
 	<title>Search Users - JokeNet</title>
   <link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
   <link rel="stylesheet" href="/style/navbar.css" />
+  <noscript><meta http-equiv="refresh" content="0;url=JSdisabled.php"></noscript>
 </head>
 <body>
 

@@ -17,9 +17,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style/jokeStylez.css" />
-<title>Sign Up - JokeNet</title>
+  <noscript><meta http-equiv="refresh" content="0;url=JSdisabled.php"></noscript>
+	<title>Sign Up - JokeNet</title>
 </head>
 <body>
 
