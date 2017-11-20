@@ -45,20 +45,16 @@
 										 $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9);
 	$stmt->fetch();
 	
-	if($_POST['Hint1']) $h1 = 1;
-	if($_POST['Hint2']) $h2 = 1;
-	if($_POST['Hint3']) $h3 = 1;
-	if($_POST['Hint4']) $h4 = 1;
-	if($_POST['Hint5']) $h5 = 1;
-	if($_POST['Hint6']) $h6 = 1;
-	if($_POST['Hint7']) $h7 = 1;
-	if($_POST['Hint8']) $h8 = 1;
-	if($_POST['Hint9']) $h9 = 1;
-
-	$query = "UPDATE `users`
-            SET `hint1` = ?, `hint2` = ?, `hint3` = ?, `hint4` = ?,
-                `hint5` = ?, `hint6` = ?, `hint7` = ?, `hint8` = ?, `hint9` = ? 
-            WHERE `username` = ?";
+	if($_POST['Hint1'] && !$f1) $query = "UPDATE `users` SET `hint1` = 1 WHERE `username` = ?";
+	elseif($_POST['Hint2'] && !$f2) $query = "UPDATE `users` SET `hint2` = 2 WHERE `username` = ?";
+	elseif($_POST['Hint3'] && !$f3) $query = "UPDATE `users` SET `hint3` = 3 WHERE `username` = ?";
+	elseif($_POST['Hint4'] && !$f4) $query = "UPDATE `users` SET `hint4` = 4 WHERE `username` = ?";
+	elseif($_POST['Hint5'] && !$f5) $query = "UPDATE `users` SET `hint5` = 5 WHERE `username` = ?";
+	elseif($_POST['Hint6'] && !$f6) $query = "UPDATE `users` SET `hint6` = 6 WHERE `username` = ?";
+	elseif($_POST['Hint7'] && !$f7) $query = "UPDATE `users` SET `hint7` = 7 WHERE `username` = ?";
+	elseif($_POST['Hint8'] && !$f8) $query = "UPDATE `users` SET `hint8` = 8 WHERE `username` = ?";
+	elseif($_POST['Hint9'] && !$f9) $query = "UPDATE `users` SET `hint9` = 9 WHERE `username` = ?";
+	else die();
 
 	if( !$stmt->prepare($query) ) {
 		$_SESSION['error'] = 1;
@@ -66,13 +62,17 @@
 		header("Location: /Main/hints.php");
 		die();
 	}
-	$stmt->bind_param("iiiiiiiiis", $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9, $_SESSION['username']);
+	$stmt->bind_param("s", $_SESSION['username']);
 	if (!$stmt->execute()){
 		$_SESSION['error'] = 1;
 		$_SESSION['msg'] = "Error executing SQL statement";
 		header("Location: /Main/hints.php");
 		die();
 	}
+
+	$_SESSION['notify'] = 1;
+	$_SESSION['msg'] = "Hint Unlocked!";
+	header("Location: /Main/hints.php");
 ?>
 
 <!DOCTYPE html>
