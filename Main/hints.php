@@ -55,7 +55,7 @@
 	elseif($_POST['Hint8'] && !$f8) $query = "UPDATE `users` SET `hint8` = 8 WHERE `username` = ?";
 	elseif($_POST['Hint9'] && !$f9) $query = "UPDATE `users` SET `hint9` = 9 WHERE `username` = ?";
 
-	//if($query) {
+	if($query) {
 		if( !$stmt->prepare($query) ) {
 			$_SESSION['error'] = 1;
 			$_SESSION['msg'] = "Problem preparing SQL statement";
@@ -73,7 +73,7 @@
 		$_SESSION['notify'] = 1;
 		$_SESSION['msg'] = "Hint Unlocked!";
 		header("Location: /Main/hints.php");
-	//}
+	}
 ?>
 
 <!DOCTYPE html>
