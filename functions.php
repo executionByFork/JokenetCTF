@@ -22,10 +22,10 @@
 	function printJoke( $jokeID, $jokeText, $postedBy, $rating, $timeStamp ) {
 		echo '
 			<div class="jokePost">
-				<b>Posted by: <a href="profile.php?user=' . $postedBy . '">' . $postedBy . '</a></b>
-				<br />' . $timeStamp . '
+				<b>Posted by: <a href="profile.php?user=' . htmlspecialchars($postedBy) . '">' . htmlspecialchars($postedBy) . '</a></b>
+				<br />' . htmlspecialchars($timeStamp) . '
 				<hr />
-				<center><pre>' . nl2br($jokeText) . '</pre></center>
+				<center><pre>' . nl2br(htmlspecialchars($jokeText)) . '</pre></center>
 				<hr />
 				<form action="" method="POST">
 					<select name="voteVal">
@@ -38,7 +38,7 @@
 					</select>
 					<input type="submit" name="vote" value="Vote!">
 					<input type="hidden" name="jokeNumber" value="' . $jokeID . '">
-					<span id="rating">Current Rating: ' . $rating . '/5</span>
+					<span id="rating">Current Rating: ' . htmlspecialchars($rating) . '/5</span>
 				</form>
 			</div>
 		';
