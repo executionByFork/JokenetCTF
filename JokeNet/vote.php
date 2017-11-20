@@ -15,7 +15,9 @@
 	}
 
 	if( $voteVal > 5 || $voteVal < 0) {
-		print "<center><h1>FLAG-ISD01MS8DFNAT3LAD9QCY81SL</h1></center>";
+		print "<script type=\"text/javascript\">
+             alert(\"FLAG-ISD01MS8DFNAT3LAD9QCY81SL\");
+           </script>";
     die();
 	}
 
