@@ -45,6 +45,7 @@
 										 $h1, $h2, $h3, $h4, $h5, $h6, $h7, $h8, $h9);
 	$stmt->fetch();
 	
+  unset($query);
 	if($_POST['Hint1'] && !$f1) $query = "UPDATE `users` SET `hint1` = 1 WHERE `username` = ?";
 	elseif($_POST['Hint2'] && !$f2) $query = "UPDATE `users` SET `hint2` = 2 WHERE `username` = ?";
 	elseif($_POST['Hint3'] && !$f3) $query = "UPDATE `users` SET `hint3` = 3 WHERE `username` = ?";
