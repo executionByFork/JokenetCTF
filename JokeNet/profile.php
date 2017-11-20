@@ -68,17 +68,17 @@
 
   <div class="n-profile-bar">
     <div class="name">
-      <h3><u><?php echo $jokerName; ?></u></h3>
+      <h3><u><?php echo htmlspecialchars($jokerName); ?></u></h3>
     </div>
     <div class="n-contact">
       <ul>
-        <li class="email"><b>Email: <?php echo $email; ?></b></li>
+        <li class="email"><b>Email: <?php echo htmlspecialchars($email); ?></b></li>
         <li class="num"><b><?php echo $stmt->num_rows; ?> jokes posted</b></li>
       </ul>
     </div>
   </div>
 
-  <h1><center><?php echo $jokerName; ?>'s Jokes:</center></h1>
+  <h1><center><?php echo htmlspecialchars($jokerName); ?>'s Jokes:</center></h1>
 
   <?php
     //get jokes by user
