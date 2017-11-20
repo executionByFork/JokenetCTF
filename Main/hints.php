@@ -161,10 +161,14 @@
 			<hr />
 			<br />
 			<h2>Clue 5:</h2>
-			<h3><i>Clue 5 here</i></h3>
+			<h3><i>This is why you should only use SESSION for authentication</i></h3>
 			<input name="Hint5" type="submit" value="Unlock Hint 5" />
 			<?php
-				if($f5 || $h5) print "<i>Here is the Hint text</i>";
+				if($f5 || $h5) print "
+					<i>
+						Cookies are delicious, but they're a terrible choice when it comes to authenticating users. They crumble under the pressure. John doesn't know that though, and he LOVES cookies! Maybe you should try out the Application tab in the Inspect popup, and google what a 'javascript:' url is. Now I've got to get back to work. More documents to write and cookies to eat, documents and cookies, documents & cookies, documents ... cookies, document.cookie ...
+					</i>
+				";
 			?>
 			<hr />
 			<br />
