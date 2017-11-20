@@ -158,8 +158,8 @@ after { clear: both; }
   margin: auto;
   padding: 22px 22px 22px 22px;
   width: 100%;
-  background: #B43104;
-  color: #1594c6;
+  background: #1594c6;
+  color: white;
 }
 
 #lg {
