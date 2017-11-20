@@ -4,15 +4,20 @@
     header("Location: /JokeNet/index.php");
 		die();
 	}
-	
-	if ( !isset($_POST['vote']) ) {
-		die();
-	}
 
 	$voteVal = (array_key_exists('voteVal', $_POST) && is_numeric($_POST['voteVal']))
 	                ? $_POST['voteVal'] : '';
 	$jokeID = (array_key_exists('jokeNumber', $_POST) && is_numeric($_POST['jokeNumber']))
 	                ? $_POST['jokeNumber'] : '';
+
+	if ( empty($voteVal) ) {
+		die();
+	}
+
+	if( $voteVal > 5 || $voteVal < 0) {
+		print "<center><h1>FLAG-ISD01MS8DFNAT3LAD9QCY81SL</h1></center>";
+    die();
+	}
 
 	include "../mysql.php";
 
