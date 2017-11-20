@@ -13,10 +13,7 @@
 	include "../mysql.php";
   include "startTimer.php";
 
-  if (!$_COOKIE["logged"]) {
-    header("Location: logout.php");
-    die();
-  }
+  checkForLoginBypass();
 
 ?>
 
