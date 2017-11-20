@@ -138,7 +138,7 @@
 			<?php
 				if($f3 || $h3) print "
 					<i>
-						Google (and many other sites) use bots called webcrawlers to crawl and index pages for their search engine. By convention, these bots check for a robots.txt file in the root folder of every site, to see if there are any folders/files they shouldn't index, by request of the site owner.
+						Google (and many other sites) use bots called webcrawlers to crawl and index pages for their search engine. By convention, these bots check for a robots.txt file in the root folder of every site. This is done to see if there are any folders/files they shouldn't index, by request of the site owner.
 					</i>
 				";
 			?>
