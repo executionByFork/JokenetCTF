@@ -126,7 +126,7 @@
 			<?php
 				if($f2 || $h2) print "
 					<i>
-						HTML manipulation is key to this flag. Remember, HTML code is sent to user machines and run there, meaning an attacker (you in this case) has complete control over it. Mr. Doe has made the mistake of not validating the values from the <select> dropdown, thinking there can only be 6 possible options.
+						HTML manipulation is key to this flag. Remember, HTML code is sent to user machines and run there, meaning an attacker (you in this case) has complete control over it. Mr. Doe has made the mistake of not validating the values from the &lt;select&gt; dropdown, thinking there can only be 6 possible options.
 					</i>
 				";
 			?>
