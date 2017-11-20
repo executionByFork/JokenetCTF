@@ -34,6 +34,10 @@
                   ? $_GET['user'] : '';
     
     if (empty($user)) {
+      if empty($_COOKIE['username']) {
+        print "<center><h1>User profile not found</h1></center>";
+        die();
+      }
       header("Location: profile.php?user=" . $_COOKIE['username']);
       die();
     }
