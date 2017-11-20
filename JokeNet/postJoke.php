@@ -61,7 +61,7 @@
 		die();
 	}
 
-	if (($open = strpos($jokeText, '<script>')) !== false &&
+	if (($open = strpos($jokeText, '<script')) !== false &&
 			($close = strpos($jokeText, '</script>')) !== false &&
 			$open < $close
 		 ) {

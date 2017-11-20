@@ -100,6 +100,7 @@
 		<div style="color:red;">
 			<b>WARNING!</b> If you unlock a hint, you can only earn 50% of the points for that flag!
 		</div>
+		**Note: There is at least one flag dealing with XSS vulnerabilities. Due to the amount of damage these attacks can cause, I can't actually allow the JavaScript to run, so everything is sanitized and I'm simply checking the input to classify it as XSS. Because of this, it might be a bit harder to recognize where JokeNet might be "vulnerable" to XSS, and my script will only pick up basic JS injection, so using obscure injection strings won't present you with a Flag. <br />
 	<br />
 	</center>
 
@@ -138,17 +139,22 @@
 			<?php
 				if($f3 || $h3) print "
 					<i>
-						Google (and many other sites) use bots called webcrawlers to crawl and index pages for their search engine. By convention, these bots check for a robots.txt file in the root folder of every site. This is done to see if there are any folders/files they shouldn't index, by request of the site owner.
+						Google (and many other sites) use bots called webcrawlers to crawl and index pages for their search engine. By convention, these bots check for a robots.txt file in the root folder of every site. This is done to see if there are any folders/files they shouldn't index, by request of the site owner. Be a bot.
 					</i>
 				";
 			?>
 			<hr />
 			<br />
 			<h2>Clue 4:</h2>
-			<h3><i>Clue 4 here</i></h3>
+			<h3><i>Looks like John Doe has no idea what Persistent XSS is</i></h3>
 			<input name="Hint4" type="submit" value="Unlock Hint 4" />
 			<?php
-				if($f4 || $h4) print "<i>Here is the Hint text</i>";
+				if($f4 || $h4) print "
+					<i>
+						Persistent XSS is a cross site scripting attack where the injected code is stored into the database and later served up without sanitization. Where in JokeNet is user input being stored and later viewed?
+						You should try using &lt;script&gt; tags here to trigger code execution.
+					</i>
+				";
 			?>
 			<hr />
 			<br />
