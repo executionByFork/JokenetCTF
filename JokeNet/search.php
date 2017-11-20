@@ -57,7 +57,7 @@
     die();
 		}
 
-		$sql = "SELECT `jokerName` FROM `jokers` WHERE `jokerName` LIKE '%{$searchkey}%'"
+		$sql = "SELECT `jokerName` FROM `jokers` WHERE `jokerName` LIKE '%{$searchkey}%'";
 		if( !($result = $conn->query($sql)) ) {
 	    print "<script type=\"text/javascript\">
 	             alert(\"There was an error in the SQL syntax\");
@@ -71,7 +71,7 @@
 		}
 		while($row = $result->fetch_object()) {
 			print '
-				<b><a href="profile.php?user=' . $row['jokerName'] . '">' . $row['jokerName'] . '</a></b><br />
+				<b><a href="profile.php?user=' . $row[0] . '">' . $row[0] . '</a></b><br />
 			';
 		}
 
