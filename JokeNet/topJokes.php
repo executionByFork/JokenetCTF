@@ -13,6 +13,7 @@
 	include "../mysql.php";
   include "startTimer.php";
 
+	include "../functions.php";
 	checkForLoginBypass();
 ?>
 
@@ -33,7 +34,6 @@
 
 	<?php
 
-		include "../functions.php";
 
 		$stmt = $conn->stmt_init();
 		if( !$stmt->prepare("SELECT * FROM `jokes` ORDER BY `rating` DESC LIMIT 15") ) {

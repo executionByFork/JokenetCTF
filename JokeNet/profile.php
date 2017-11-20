@@ -13,6 +13,7 @@
   include "../mysql.php";
   include "startTimer.php";
 
+  include "../functions.php";
   checkForLoginBypass();
 ?>
 
@@ -93,8 +94,6 @@
     $stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
 
     $stmt->store_result();
-
-    include "../functions.php";
 
     while($stmt->fetch()) {
       printJoke($jokeID, $jokeText, $postedBy, $rating, $timeStamp);
