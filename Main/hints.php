@@ -106,10 +106,17 @@
 	<div id="main">
 		<form action="hints.php" method="POST">
 			<h2>Clue 1:</h2>
-			<h3><i>Clue 1 here</i></h3>
+			<h3><i>Seems John Doe couldn't figure out how to use prepared statements with the LIKE operator and got lazy...</i></h3>
 			<input name="Hint1" type="submit" value="Unlock Hint 1" />
 			<?php
-				if($f1 || $h1) print "<i>Here is the Hint text</i>";
+				if($f1 || $h1) print "
+					<i>
+						In SQL, the LIKE operator is used to return <u>multiple rows</u> from a database that partially match some input. So, what is the only place in JokeNet that multiple rows are returned after user input is submitted? <br />
+						Remember, when using SQL Injection, you must balance the statement or the query wont run. ' and # should be all you need for balancing. <br />
+						Look into the UNION operator. PHP doesn't allow for query chaining with ; so you'll have to be more creative. Also, I'm just going to drop these two strings here and hopefully they'll be useful. <br />
+						`jokerHash` & `jokers`
+					</i>
+				";
 			?>
 			<hr />
 			<br />
