@@ -34,7 +34,7 @@
                   ? $_GET['user'] : '';
     
     if (empty($user)) {
-      if (empty($_COOKIE['username']) {
+      if (empty($_COOKIE['username'])) {
         print "<center><h1>User profile not found</h1></center>";
         die();
       }
