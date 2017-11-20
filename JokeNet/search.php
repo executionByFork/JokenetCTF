@@ -13,7 +13,8 @@
 	include "../mysql.php";
   include "startTimer.php";
 
-  checkForLoginBypass();
+  include "../functions.php";
+	checkForLoginBypass();
 
 ?>
 

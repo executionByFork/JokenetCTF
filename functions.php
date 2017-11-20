@@ -1,5 +1,16 @@
 <?php
 
+	function checkForLoginBypass() {
+		if (!$_SESSION['JokeNetLogged']) {
+			if ($_COOKIE["logged"]) {
+				print "<center><h2>FLAG-A1WL9S73NSU8S0SNDI6SADAV3</h2></center>";
+			} else {
+				header("Location: logout.php");
+				die();
+			}
+		}
+	}
+
 	function checkForBanner() {
 		if( isset($_SESSION['notify']) ) {
 			echo "<div id='notify'><b>" . $_SESSION['msg'] . "</b></div>";
@@ -29,12 +40,12 @@
 				<hr />
 				<form action="" method="POST">
 					<select name="voteVal">
-					  <option value="0" selected>0</option>
-					  <option value="1">1</option>
-					  <option value="2">2</option>
-					  <option value="3">3</option>
-					  <option value="4">4</option>
-					  <option value="5">5</option>
+						<option value="0" selected>0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
 					</select>
 					<input type="submit" name="vote" value="Vote!">
 					<input type="hidden" name="jokeNumber" value="' . $jokeID . '">
