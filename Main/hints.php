@@ -54,28 +54,26 @@
 	elseif($_POST['Hint7'] && !$f7) $query = "UPDATE `users` SET `hint7` = 7 WHERE `username` = ?";
 	elseif($_POST['Hint8'] && !$f8) $query = "UPDATE `users` SET `hint8` = 8 WHERE `username` = ?";
 	elseif($_POST['Hint9'] && !$f9) $query = "UPDATE `users` SET `hint9` = 9 WHERE `username` = ?";
-	else {
-		debug_to_console("DED");
-		die();
-	}
 
-	if( !$stmt->prepare($query) ) {
-		$_SESSION['error'] = 1;
-		$_SESSION['msg'] = "Problem preparing SQL statement";
-		header("Location: /Main/hints.php");
-		die();
-	}
-	$stmt->bind_param("s", $_SESSION['username']);
-	if (!$stmt->execute()){
-		$_SESSION['error'] = 1;
-		$_SESSION['msg'] = "Error executing SQL statement";
-		header("Location: /Main/hints.php");
-		die();
-	}
+	if($query) {
+		if( !$stmt->prepare($query) ) {
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Problem preparing SQL statement";
+			header("Location: /Main/hints.php");
+			die();
+		}
+		$stmt->bind_param("s", $_SESSION['username']);
+		if (!$stmt->execute()){
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error executing SQL statement";
+			header("Location: /Main/hints.php");
+			die();
+		}
 
-	$_SESSION['notify'] = 1;
-	$_SESSION['msg'] = "Hint Unlocked!";
-	header("Location: /Main/hints.php");
+		$_SESSION['notify'] = 1;
+		$_SESSION['msg'] = "Hint Unlocked!";
+		header("Location: /Main/hints.php");
+	}
 ?>
 
 <!DOCTYPE html>
