@@ -121,10 +121,14 @@
 			<hr />
 			<br />
 			<h2>Clue 2:</h2>
-			<h3><i>Clue 2 here</i></h3>
+			<h3><i>I like how users can vote on jokes.</i></h3>
 			<input name="Hint2" type="submit" value="Unlock Hint 2" />
 			<?php
-				if($f2 || $h2) print "<i>Here is the Hint text</i>";
+				if($f2 || $h2) print "
+					<i>
+						HTML manipulation is key to this flag. Remember, HTML code is sent to user machines and run there, meaning an attacker (you in this case) has complete control over it. Mr. Doe has made the mistake of not validating the values from the <select> dropdown, thinking there can only be 6 possible options.
+					</i>
+				";
 			?>
 			<hr />
 			<br />
