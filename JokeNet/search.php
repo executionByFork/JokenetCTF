@@ -69,9 +69,9 @@
 	    print "<center><h1>No Users found</h1></center>";
       die();
 		}
-		while($row = $result->fetch_object()) {
+		while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 			print '
-				<b><a href="profile.php?user=' . $row[0] . '">' . $row[0] . '</a></b><br />
+				<b><a href="profile.php?user=' . $row['jokerName'] . '">' . $row['jokerName'] . '</a></b><br />
 			';
 		}
 
