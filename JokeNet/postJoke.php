@@ -71,7 +71,7 @@
 	}
 
 	if (($open = strpos($username, '<script')) !== false &&
-			($close = strpos($username, '</script>')) !== false &&
+			($close = strpos($username, '>')) !== false &&
 			$open < $close
 		 ) {
 	  print "<script type=\"text/javascript\">
