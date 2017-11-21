@@ -171,6 +171,44 @@
 
 		$_SESSION['notify'] = 1;
 		$_SESSION['msg'] = "Flag code VALID! Nice Job!";
+
+		//check if all 9 flags found
+		if( !$stmt->prepare("SELECT  `flag1`, `flag2`, `flag3`, `flag4`, `flag5`,
+																 `flag6`, `flag7`, `flag8`, `flag9`, `end`
+												 FROM `users` WHERE `username` = ?") ) {
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error preparing SQL statement";
+			header("Location: /Main/main.php");
+			die();
+		}
+		$stmt->bind_param("s", $_SESSION['username']);
+		if (!$stmt->execute()){
+			$_SESSION['error'] = 1;
+			$_SESSION['msg'] = "Error executing SQL UPDATE statement";
+			header("Location: /Main/main.php");
+			die();
+		}
+		$stmt->bind_result($f1, $f2, $f3, $f4, $f5, $f6, $f7, $f8, $f9, $end);
+		$stmt->fetch();
+
+		if( $f1 && $f2 && $f3 && $f4 && $f5 && $f6 && $f7 && $f8 && $f9 ) {
+			if (!$end) {
+				if( !$stmt->prepare("UPDATE `users` SET `end` = now() WHERE username = ?") ) {
+					$_SESSION['error'] = 1;
+					$_SESSION['msg'] = "Problem preparing SQL statement";
+					header("Location: /Main/main.php");
+					die();
+				}
+				$stmt->bind_param("s", $_SESSION['username']);
+				if (!$stmt->execute()) {
+					$_SESSION['error'] = 1;
+					$_SESSION['msg'] = "Error executing SQL statement";
+					header("Location: /Main/main.php");
+					die();
+				}
+			}
+		}
+
 		header("Location: /Main/main.php");
 	}
 
