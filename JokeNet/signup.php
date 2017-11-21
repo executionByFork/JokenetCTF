@@ -71,6 +71,17 @@
 	  die();
 	}
 
+	if (($at = strpos($email, '@')) !== false &&
+			($dot = strpos($email, '.')) !== false &&
+			$at < $dot
+		 ) {
+	} else {
+		print "<script type=\"text/javascript\">
+             alert(\"Improper email format!\");
+           </script>";
+		die();
+	}
+
 	if ( !($password === $passCheck) ) {
 		print "<script type=\"text/javascript\">
 	           alert(\"Passwords dont match!\");
