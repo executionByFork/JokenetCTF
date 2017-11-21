@@ -7,8 +7,8 @@
 	}
 	
   unset($_SESSION['JokeNetLogged']);
-	setcookie("logged", 0);
-	setcookie("username", "");
+	setcookie("logged", 0, 0, "/");
+	setcookie("username", "", 0, "/");
 
 	include "../functions.php";
 	checkForBanner();
