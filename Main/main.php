@@ -149,6 +149,9 @@
 		case 9:
 			$query = "UPDATE `users` SET flag9=1 WHERE `username` = ?";
 			break;
+		case 10:
+			$query = "UPDATE `users` SET flagE=1 WHERE `username` = ?";
+			break;
 	}
 
 	if ($query) {

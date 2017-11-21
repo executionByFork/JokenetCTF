@@ -41,10 +41,10 @@
 			$query = "SELECT * FROM (
                   SELECT `username`,
                          (
-                          ((flag1 + flag2 + flag3 + flag4 +
-                            flag5 + flag6 + flag7 + flag8 + flag9)*10) +
-                          ((hint1 + hint2 + hint3 + hint4 +
-                            hint5 + hint6 + hint7 + hint8 + hint9)*-5)
+                          ((flag1 + flag2 + flag3 + flag4 + flag5 +
+                          	flag6 + flag7 + flag8 + flag9 + flagE)*10) +
+                          ((hint1 + hint2 + hint3 + hint4 + hint5 +
+                          	hint6 + hint7 + hint8 + hint9)*-5)
                          ) AS `points`,
                          (
                           CASE
@@ -59,15 +59,15 @@
                           END
                          ) AS `time` FROM `users`
                 ) x
-                ORDER BY `points` DESC, `time` ASC LIMIT 10";
+                ORDER BY `points` DESC, `time` ASC LIMIT 15";
 		} elseif($_POST['search']) {
 			$query = "SELECT * FROM (
                   SELECT `username`,
                          (
-                          ((flag1 + flag2 + flag3 + flag4 +
-                            flag5 + flag6 + flag7 + flag8 + flag9)*10) +
-                          ((hint1 + hint2 + hint3 + hint4 +
-                            hint5 + hint6 + hint7 + hint8 + hint9)*-5)
+                          ((flag1 + flag2 + flag3 + flag4 + flag5 +
+                          	flag6 + flag7 + flag8 + flag9 + flagE)*10) +
+                          ((hint1 + hint2 + hint3 + hint4 + hint5 +
+                          	hint6 + hint7 + hint8 + hint9)*-5)
                          ) AS `points`,
                          (
                           CASE
@@ -83,7 +83,7 @@
                          ) AS `time` FROM `users`
                 ) x
                 WHERE `username` LIKE ?
-                ORDER BY LOCATE(?, `username`), `username` LIMIT 50";
+                ORDER BY LOCATE(?, `username`), `username` LIMIT 30";
 
         $searchKey = (array_key_exists('searchKey', $_POST) && is_string($_POST['searchKey']))
 									? $_POST['searchKey'] : '';
