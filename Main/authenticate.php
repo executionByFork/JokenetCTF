@@ -5,6 +5,10 @@
 		header("Location: /Main/main.php");
 		die();
 	}
+	
+  unset($_SESSION['JokeNetLogged']);
+	setcookie("logged", 0);
+	setcookie("username", "");
 
 	include "../functions.php";
 	checkForBanner();
