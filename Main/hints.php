@@ -210,10 +210,15 @@
 			<hr />
 			<br />
 			<h2>Clue 9:</h2>
-			<h3><i>Clue 9 here</i></h3>
+			<h3><i>John Doe has created a secret file...</i></h3>
 			<input name="Hint9" type="submit" value="Unlock Hint 9" />
 			<?php
-				if($f9 || $h9) print "<i>Here is the Hint text</i>";
+				if($f9 || $h9) print "
+					<i>
+						Here's the file: '/superdupersecretfolder/superdupersecretfile.php' but there's a problem as you'll see. <br />
+						Clearly you cant actually be directed here by example.com, so how will you view the file? Do you know the definition of spoofing? What about the definition of referrer? You might need to add an extention or download something to pull this off...
+					</i>
+				";
 			?>
 			<hr />
 		</form>

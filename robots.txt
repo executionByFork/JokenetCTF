@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /superdupersecretfolder/FLAG-AS01KW3M926SLVCP01D8S4HGZ.txt,
-          /superdupersecretfolder/superdupersecretfile.php
+          /JokeNet/superdupersecretfile.php
 
 
 /* Heroku doesn't allow you to navigate to a folder and view the files in there... stupid Heroku. :( */
