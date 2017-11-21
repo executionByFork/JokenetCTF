@@ -64,7 +64,7 @@
       print "<center><h1>User profile not found</h1></center>";
       die();
     }
-    $stmt->fetch()
+    $stmt->fetch();
 
     //get jokes by user
     if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
