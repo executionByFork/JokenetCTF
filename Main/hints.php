@@ -224,9 +224,10 @@
 		</form>
 	</div>
 	<br />
-	<div id="rules">
-		If you find any vulnerabilities that don't seem to lead to a flag, you should let me know! There might be some extra points in it for you...
-	</div>
+	<div id="rules"><center>
+		If you find any vulnerabilities that don't seem to lead to a flag, you should let me know! <br />
+		There might just be some extra points in it for you...
+	</center></div>
 
 </body>
 </html>
