@@ -11,8 +11,9 @@
 	setcookie("username", "", 0, "/");
 
 	//hotfix cleanup
-	setcookie("logged", 0, -1, "/JokeNet");
-	setcookie("username", "", -1, "/Main");
+	setcookie("logged", null, -1, "/JokeNet");
+	setcookie("username", null, -1, "/JokeNet");
+	setcookie("logged", null, -1, "/Main");
 
 
 	include "../functions.php";
