@@ -36,7 +36,11 @@
 				<b>Posted by: <a href="profile.php?user=' . htmlspecialchars($postedBy) . '">' . htmlspecialchars($postedBy) . '</a></b>
 				<br />' . htmlspecialchars($timeStamp) . '
 				<hr />
-				<center><pre>' . nl2br(htmlspecialchars($jokeText)) . '</pre></center>
+				<center>
+					<div style="width: 75%;">
+						<pre>' . nl2br(htmlspecialchars($jokeText)) . '</pre>
+					</div>
+				</center>
 				<hr />
 				<form action="" method="POST">
 					<select name="voteVal">
