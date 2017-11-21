@@ -185,10 +185,14 @@
 			<hr />
 			<br />
 			<h2>Clue 7:</h2>
-			<h3><i>Clue 7 here</i></h3>
+			<h3><i>Javascript is completely under the client's control</i></h3>
 			<input name="Hint7" type="submit" value="Unlock Hint 7" />
 			<?php
-				if($f7 || $h7) print "<i>Here is the Hint text</i>";
+				if($f7 || $h7) print "
+					<i>
+						Javascript is run client side, meaning the user is in complete control of the variables, the function calls, and if Javascript is even run at all. Take a look around JokeNet, what do you notice when you do something that isn't allowed? What appears on the screen and why does it appear on the screen? Can you circumvent it?
+					</i>
+				";
 			?>
 			<hr />
 			<br />
