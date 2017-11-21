@@ -37,7 +37,7 @@
 				<br />' . htmlspecialchars($timeStamp) . '
 				<hr />
 				<center>
-					<div style="width: 75%;">
+					<div style="width: 80%;">
 						' . nl2br(htmlspecialchars($jokeText)) . '
 					</div>
 				</center>
