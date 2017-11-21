@@ -65,6 +65,23 @@
       die();
     }
     $stmt->fetch()
+
+    //get jokes by user
+    if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
+      print "<script type=\"text/javascript\">
+               alert(\"Error preparing statment 2\");
+             </script>";
+      die();
+    }
+    $stmt->bind_param("s", $user);
+    if (!$stmt->execute()){
+      print "<script type=\"text/javascript\">
+               alert(\"Error executing statement\");
+             </script>";
+      die();
+    }
+    $stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
+    $stmt->store_result();
   ?>
 
   <div class="n-profile-bar">
@@ -82,23 +99,6 @@
   <h1><center><?php echo htmlspecialchars($jokerName); ?>'s Jokes:</center></h1>
 
   <?php
-    //get jokes by user
-    if( !$stmt->prepare("SELECT * FROM `jokes` WHERE `postedBy` = ? ORDER BY `timeStamp` DESC") ) {
-      print "<script type=\"text/javascript\">
-               alert(\"Error preparing statment 2\");
-             </script>";
-      die();
-    }
-    $stmt->bind_param("s", $user);
-    if (!$stmt->execute()){
-      print "<script type=\"text/javascript\">
-               alert(\"Error executing statement\");
-             </script>";
-      die();
-    }
-    $stmt->bind_result($jokeID, $jokeText, $postedBy, $rating, $numVotes, $timeStamp);
-
-    $stmt->store_result();
 
     while($stmt->fetch()) {
       printJoke($jokeID, $jokeText, $postedBy, $rating, $timeStamp);

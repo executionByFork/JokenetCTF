@@ -59,7 +59,7 @@
                           END
                          ) AS `time` FROM `users`
                 ) x
-                ORDER BY `points` DESC, `time` ASC LIMIT 15";
+                ORDER BY `points` DESC, `time` ASC LIMIT 10";
 		} elseif($_POST['search']) {
 			$query = "SELECT * FROM (
                   SELECT `username`,
