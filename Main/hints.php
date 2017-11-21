@@ -197,10 +197,15 @@
 			<hr />
 			<br />
 			<h2>Clue 8:</h2>
-			<h3><i>Clue 8 here</i></h3>
+			<h3><i>This uses the same attack vector as Flag 5</i></h3>
 			<input name="Hint8" type="submit" value="Unlock Hint 8" />
 			<?php
-				if($f8 || $h8) print "<i>Here is the Hint text</i>";
+				if($f8 || $h8) print "
+					<i>
+						To find this flag you're going to need to create a Reflective XSS attack, do you know what that is? I'm going to assume you do, and ask how you might be able to pull it off using the same vulneribility in flag 5, if you've found it yet :) This one is a bit tricky but I have faith in you.<br />
+						You should try using &lt;script&gt; tags here to trigger code execution.
+					</i>
+				";
 			?>
 			<hr />
 			<br />

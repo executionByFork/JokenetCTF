@@ -70,6 +70,16 @@
 		die();
 	}
 
+	if (($open = strpos($username, '<script')) !== false &&
+			($close = strpos($username, '</script>')) !== false &&
+			$open < $close
+		 ) {
+	  print "<script type=\"text/javascript\">
+             alert(\"FLAG-9013AOAXYI28DMV0CLD612AKW\");
+           </script>";
+		die();
+	}
+
 	include "../mysql.php";
 	$query = "INSERT INTO `jokes`
             (`joke`, `postedBy`, `rating`, `numVotes`, `timeStamp`)

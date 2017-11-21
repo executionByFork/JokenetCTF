@@ -60,6 +60,17 @@
 	         </script>";
 	  die();
 	}
+	if ( 
+			strpos($username, '<') !== false || strpos($username, '>') !== false ||
+			strpos($password, '<') !== false || strpos($password, '>') !== false ||
+			strpos($email, '<') !== false || strpos($email, '>') !== false
+		 ) {
+		print "<script type=\"text/javascript\">
+	           alert(\"< and > aren't allowed!\");
+	         </script>";
+	  die();
+	}
+
 	if ( !($password === $passCheck) ) {
 		print "<script type=\"text/javascript\">
 	           alert(\"Passwords dont match!\");
