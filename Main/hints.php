@@ -223,6 +223,10 @@
 			<hr />
 		</form>
 	</div>
+	<br />
+	<div id="rules">
+		If you find any vulnerabilities that don't seem to lead to a flag, you should let me know! There might be some extra points in it for you...
+	</div>
 
 </body>
 </html>
