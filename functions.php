@@ -38,7 +38,7 @@
 				<hr />
 				<center>
 					<div style="width: 75%;">
-						<pre>' . nl2br(htmlspecialchars($jokeText)) . '</pre>
+						' . nl2br(htmlspecialchars($jokeText)) . '
 					</div>
 				</center>
 				<hr />
