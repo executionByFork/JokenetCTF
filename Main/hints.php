@@ -101,7 +101,10 @@
 			<b>WARNING!</b> If you unlock a hint, you can only earn 50% of the points for that flag!
 		</div>
 		<div id="rules">
-			**Note: There is at least one flag dealing with XSS vulnerabilities. Due to the amount of damage these attacks can cause, I can't actually allow the JavaScript to run, so everything is sanitized and I'm simply checking the input to classify it as XSS. Because of this, it might be a bit harder to recognize where JokeNet might be "vulnerable" to XSS, and my script will only pick up basic JS injection, so using obscure injection strings won't present you with a Flag.
+			**Note: There is at least one flag dealing with XSS vulnerabilities. Due to the amount of damage these attacks can cause, I can't actually allow the JavaScript to run, so everything is sanitized and I'm simply checking the input to classify it as XSS. Because of this, it might be a bit harder to recognize where JokeNet might be "vulnerable" to XSS, and my script will only pick up basic JS injection, so using obscure injection strings won't present you with a Flag. <br />
+			<br />
+			If you find any vulnerabilities that don't seem to lead to a flag, you should let me know! <br />
+			There might just be some extra points in it for you...
 		</div>
 		<br />
 	</center>
@@ -224,10 +227,6 @@
 		</form>
 	</div>
 	<br />
-	<div id="rules"><center>
-		If you find any vulnerabilities that don't seem to lead to a flag, you should let me know! <br />
-		There might just be some extra points in it for you...
-	</center></div>
 
 </body>
 </html>
