@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /superdupersecretfolder/FLAG-AS01KW3M926SLVCP01D8S4HGZ.txt,
+Disallow: /superdupersecretfolder/FLAG.php,
           /JokeNet/superdupersecretfile.php
 
 
