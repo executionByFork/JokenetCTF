@@ -43,6 +43,7 @@
   <!-- 
     This is probably the easiest flag you're going to find
     FLAG-HV8WHVUW7HF782HVBKJSH09US
+    :)
   -->
 </body>
 </html>
